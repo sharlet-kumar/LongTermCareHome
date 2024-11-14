@@ -9,12 +9,12 @@ DateOfBirth date,
 Sex char (1) check(Sex in ('M','F')), 
 Height smallint,
 Weight smallint, 
-InsuranceID int (10), 
-AddressID int (10),
+InsuranceID varchar (10), 
+AddressID varchar (10),
 DNR boolean,
-MealPlanID int (10),
- PRIMARY KEY(PatientID)
- ##DO FOREIGN KEYS
+MealPlanID varchar (10),
+ PRIMARY KEY(PatientID),
+ foreign key PatientID(InsuranceID) references Insurance(PolicyID)
  );
 create table PatientAddress
 (
@@ -72,32 +72,57 @@ foreign key PatientStaffCare(patientID) references Patient(patientID)
 
 create table StaffPhone
 (
-staffID varchar (10),
+staffID varchar (10) not null,
 phone varchar (15),
 primary key (staffID),
 foreign key StaffPhone(staffID) references Staff(staffID));
 
 create table Insurance(
-
+PolicyID varchar (10) not null,
+provider varchar (20),
+patientID varchar (10),
+BillingAddressID varchar (10),
+primary key (PolicyID),
+foreign key Insurance(patientID) references Patient(patientID)
 );
-##ENSURE INSURANCE RELATIONS ARE CORRECT##
+
+create table BillingAddress(
+BillingAddressID varchar (10) not null, 
+streetNo int,
+streetName varchar (20),
+unitNo smallint,
+city varchar (25),
+state varchar (20),
+country varchar (30),
+primary key (BillingAddressID),
+foreign key BillingAddress(BillingAddressID) references Insurance(BillingAddressID)
+);
+
+create table InsuranceCoverageDetails (
+PolicyID varchar (10) not null,
+coverageDetails varchar (60), 
+primary key (PolicyID),
+foreign key InsuranceCoverageDetails(PolicyID) references Insurance(PolicyID)
+)
+;
+
 
 create table Medication (
-medID varchar (10),
+medID varchar (10) not null,
 medName varchar (30),
 drugclass varchar (20),
 adminDetails varchar (50),
 storagedetails varchar (50),
 primary key (medID));
 
-create table PatientMedication( ##Determine what are PK's and if PDocID needs to renamed to StaffID
-PatientID varchar (10),
-medID varchar (10),
+create table PatientMedication( 
+PatientID varchar (10) not null,
+medID varchar (10) not null,
 dosage smallint,
 AdminSchedule varchar (40),
 prescribingDocID varchar (10),
-primary key (patientID, ???)
-foreign key Medication(patientID) references Patient(patientID)
+primary key (patientID, prescribingDocID),
+foreign key Medication(patientID) references Patient(patientID),
 foreign key PatientMedication(prescribingDocID) references StaffID(staffID)
 );
 
@@ -130,32 +155,74 @@ foreign key PatientAllergy(allergyName) references PatientAllergy(allergyName)
 create table AllergySymptoms(
 allergyName varchar (20) not null,
 symptoms varchar (160),
-severity varchar (6) Check(severity in ('Low', 'Medium', 'High')))
-;
+severity varchar (6) Check(severity in ('Low', 'Medium', 'High')),
+primary key (allergyName));
+
 
 create table AllergyTreatment ##DO WE NEED THIS???
 
 create table MealPlan ##CAN THIS COMBINE INTO PLAN AND FOOD THING??
 
 create table Visitor(
-vistorID varchar (10) not null,
+visitorID varchar (10) not null,
 firstName varchar (15),
 lastName varchar (15)
 primary key (vistorID));
 
 create table Visit(
 visitID varchar (10) not null,
-vistorID varchar (10) not null,
+visitorID varchar (10) not null,
 patientID varchar (10) not null,
 VisitDate date,
-notes varchar (100));
+notes varchar (100),
+primary key (visitID),
+foreign key Visit(visitorID) references Visitor(visitorID),
+foreign key Visit(patientID) references Patient(patientID));
 
 create table VisitorPhone(
-visitorID varchar (10), 
-phone varchar (15)
+visitorID varchar (10) not null, 
+phone varchar (15),
+primary key (visitorID),
+foreign key VisitorPhone(visitorID) references Visitor(visitorID)
 );
 
-create table 
+create table food(
+foodname varchar (50) not null,
+foodgroup varchar (20),
+calories int,
+protein int,
+fats int,
+primary key (foodname)
+);
+
+create table FoodAllergyConflict(
+foodname varchar (50) not null,
+allergyName varchar (20) not null,
+ConflictCheck boolean,
+primary key (foodname, allergyName),
+foreign key FoodAllergyConflict(foodname) references food(foodname),
+foreign key FoodAllergyConflict(allergyName) references Allergy(allergyName));
+
+create table MedAllergyConflict(
+allergyName varchar (20) not null,
+medID varchar (10) not null, 
+ConflictCheck boolean,
+primary key (allergyName, medID),
+foreign key MedAllergyConflict(medID) references Medication(medID),
+foreign key MedAllergyConflict(allergyName) references Allergy(allergyName));
+
+create table MedtoMedConflict(
+medicationAID varchar (10) not null,
+medicationBID varchar (10) not null,
+ConflictCheck boolean,
+primary key (medicationAID, medicationBID),
+foreign key MedtoMedConflict(medicationAID) references Medication(medID),
+foreign key MedtoMedConflict(medicationBID) references Medication(medID));
+
+
+
+
+
 
 create table 
 create table Food;
