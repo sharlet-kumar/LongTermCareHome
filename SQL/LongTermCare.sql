@@ -1,3 +1,5 @@
+drop database longtermcare;
+create database longtermcare;
 use LongTermCare;
 
 create table Patient 
@@ -8,41 +10,39 @@ lastName varchar (15),
 DateOfBirth date,
 Sex char (1) check(Sex in ('M','F')), 
 Height smallint,
-Weight smallint, 
-InsuranceID varchar (10), 
-AddressID varchar (10),
+Weight smallint,  
+AddressID varchar (10) unique,
 DNR boolean,
 MealPlanID varchar (10),
- PRIMARY KEY(PatientID),
- foreign key PatientID(InsuranceID) references Insurance(PolicyID)
+PRIMARY KEY(PatientID)
  );
 create table PatientAddress
 (
-AddressID int (10),
+AddressID varchar (10),
 StreetNo int,
 StreetName varchar (30),
  UnitNo smallint,
  City varchar (30),
  State varchar (30),
  Country varchar (30),
- primary key (AddressID),
+ PRIMARY KEY (AddressID),
  foreign key PatientAddress(AddressID) references Patient(AddressID)
 	ON DELETE CASCADE
     ON UPDATE CASCADE
 );
 create table PatientMedications
 (
-patientID int (10),
+ patientID varchar (10),
  medicalCondition varchar (30),
  description varchar (150), 
  diagnosisDate date, 
- diagnoserID varchar (10),
- primary key (patientID, medicalCondition),
+ diagnoserID varchar (10) ##Is this a FK???###
+ ,primary key (patientID, medicalCondition),
  foreign key PatientMedications(patientID) references Patient(patientID)
 );
 create table PatientPhone
 (
-patientID int(10),
+patientID varchar(10),
 phone varchar (15),
 primary key (patientID),
 foreign key PatientPhone(patientID) references Patient(patientID)
@@ -81,7 +81,7 @@ create table Insurance(
 PolicyID varchar (10) not null,
 provider varchar (20),
 patientID varchar (10),
-BillingAddressID varchar (10),
+BillingAddressID varchar (10) unique,
 primary key (PolicyID),
 foreign key Insurance(patientID) references Patient(patientID)
 );
@@ -123,7 +123,7 @@ AdminSchedule varchar (40),
 prescribingDocID varchar (10),
 primary key (patientID, prescribingDocID),
 foreign key Medication(patientID) references Patient(patientID),
-foreign key PatientMedication(prescribingDocID) references StaffID(staffID)
+foreign key PatientMedication(prescribingDocID) references Staff(staffID)
 );
 
 create table MedicalSideEffects(
@@ -135,7 +135,7 @@ foreign key MedicalSideEffects(medID) references Medication(medID)
 );
 
 create table Allergy(
-allergyName varchar (20) not null,
+allergyName varchar (20) not null unique,
 managementStrategy varchar (100),
 seasonalconsiderations varchar (50),
 primary key (allergyName)
@@ -143,7 +143,7 @@ primary key (allergyName)
 
 
 create table PatientAllergy(
-allergyName varchar (20) not null,
+allergyName varchar (20) not null unique,
 patientID varchar (10) not null,
 severity varchar (6) Check(severity in ('Low', 'Medium', 'High')),
 description varchar (50),
@@ -159,15 +159,15 @@ severity varchar (6) Check(severity in ('Low', 'Medium', 'High')),
 primary key (allergyName));
 
 
-create table AllergyTreatment ##DO WE NEED THIS???
+#create table AllergyTreatment ##DO WE NEED THIS???
 
-create table MealPlan ##CAN THIS COMBINE INTO PLAN AND FOOD THING??
+#create table MealPlan ##CAN THIS COMBINE INTO PLAN AND FOOD THING??
 
 create table Visitor(
 visitorID varchar (10) not null,
 firstName varchar (15),
-lastName varchar (15)
-primary key (vistorID));
+lastName varchar (15),
+primary key (visitorID));
 
 create table Visit(
 visitID varchar (10) not null,
@@ -177,7 +177,7 @@ VisitDate date,
 notes varchar (100),
 primary key (visitID),
 foreign key Visit(visitorID) references Visitor(visitorID),
-foreign key Visit(patientID) references Patient(patientID));
+foreign key PIDVisit(patientID) references Patient(patientID));
 
 create table VisitorPhone(
 visitorID varchar (10) not null, 
@@ -219,11 +219,20 @@ primary key (medicationAID, medicationBID),
 foreign key MedtoMedConflict(medicationAID) references Medication(medID),
 foreign key MedtoMedConflict(medicationBID) references Medication(medID));
 
+##INSERT STATEMENTS
+
+insert into food (foodname, foodgroup, calories, protein, fats)
+values ('Bowl of Scrambled Eggs', 'Protein', 326, 22, 24);
+
+insert into Patient (PatientID, firstName, lastName, Sex, Weight, DNR) values 
+('2516544', 'William', 'Burgers', 'M', 165, 0);
+
+insert into PatientPhone (PatientID,phone)
+(
+Select PatientID, 6478880121
+from Patient
+);
 
 
 
-
-
-create table 
-create table Food;
-create table MealPlan;
+ 
