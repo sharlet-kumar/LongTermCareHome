@@ -13,6 +13,7 @@ Height smallint,
 Weight smallint,  
 AddressID varchar (10) unique,
 DNR boolean,
+InsuranceCheck boolean,
 PRIMARY KEY(PatientID)
  );
 create table PatientAddress
