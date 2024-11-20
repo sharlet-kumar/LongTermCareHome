@@ -18,7 +18,7 @@ PRIMARY KEY(PatientID)
  );
 create table PatientAddress
 (
-AddressID varchar (10),
+AddressID varchar (10) not null,
 StreetNo int,
 StreetName varchar (30),
  UnitNo smallint,
@@ -30,27 +30,34 @@ StreetName varchar (30),
 	ON DELETE CASCADE
     ON UPDATE CASCADE
 );
-create table PatientMedications
+create table PatientCondition
 (
- patientID varchar (10),
- medicalCondition varchar (30),
+ patientID varchar (10) not null,
+ medicalCondition varchar (30) not null,
  description varchar (150), 
  diagnosisDate date, 
- diagnoserID varchar (10) ##Is this a FK???###
+ diagnoserID varchar (10)
  ,primary key (patientID, medicalCondition),
- foreign key PatientMedications(patientID) references Patient(patientID)
+ foreign key PatientCondition(diagnoserID) references Staff(staffID)
+	ON DELETE NO ACTION
+    ON UPDATE CASCADE,
+ foreign key PatientCondition(patientID) references Patient(patientID)
+	ON DELETE cascade
+    ON UPDATE cascade
 );
 create table PatientPhone
 (
-patientID varchar(10),
+patientID varchar(10) not null,
 phone varchar (15),
 primary key (patientID),
 foreign key PatientPhone(patientID) references Patient(patientID)
+	ON DELETE cascade
+    ON UPDATE cascade
 );
 
 create table Staff
 (
-staffID varchar (10),
+staffID varchar (10) not null,
 firstName varchar (15),
 lasttime varchar (15),
 position varchar (20),
@@ -60,14 +67,18 @@ primary key (staffID)
 
 create table PatientStaffCare
 (
-staffID varchar(10),
-patientID varchar (10),
+staffID varchar(10) not null,
+patientID varchar (10) not null,
 staffRoleInCare varchar(30),
 careStartDate date,
 careEndDate date,
 primary key (staffID, patientID),
-foreign key PatientStaffCare(staffID) references Staff(staffID),
+foreign key PatientStaffCare(staffID) references Staff(staffID)
+	ON DELETE cascade
+    ON UPDATE cascade,
 foreign key PatientStaffCare(patientID) references Patient(patientID)
+	ON DELETE cascade
+    ON UPDATE cascade
 );
 
 create table StaffPhone
@@ -84,6 +95,8 @@ patientID varchar (10),
 BillingAddressID varchar (10) unique,
 primary key (PolicyID),
 foreign key Insurance(patientID) references Patient(patientID)
+	ON DELETE cascade
+    ON UPDATE cascade
 );
 
 create table BillingAddress(
@@ -96,6 +109,8 @@ state varchar (20),
 country varchar (30),
 primary key (BillingAddressID),
 foreign key BillingAddress(BillingAddressID) references Insurance(BillingAddressID)
+	ON DELETE cascade
+    ON UPDATE cascade
 );
 
 create table InsuranceCoverageDetails (
@@ -103,6 +118,8 @@ PolicyID varchar (10) not null,
 coverageDetails varchar (60), 
 primary key (PolicyID),
 foreign key InsuranceCoverageDetails(PolicyID) references Insurance(PolicyID)
+	ON DELETE cascade
+    ON UPDATE cascade
 )
 ;
 
@@ -122,8 +139,12 @@ dosage smallint,
 AdminSchedule varchar (40),
 prescribingDocID varchar (10),
 primary key (patientID, prescribingDocID),
-foreign key Medication(patientID) references Patient(patientID),
+foreign key Medication(patientID) references Patient(patientID)
+	ON DELETE CASCADE
+    ON UPDATE cascade,
 foreign key PatientMedication(prescribingDocID) references Staff(staffID)
+	ON DELETE no action
+    ON UPDATE cascade
 );
 
 create table MedicalSideEffects(
@@ -131,13 +152,15 @@ medID varchar(10) not null,
 sideEffects varchar (50),
 Severity varbinary (10),
 primary key (medID),
-foreign key MedicalSideEffects(medID) references Medication(medID) 
+foreign key MedicalSideEffects(medID) references Medication(medID)
+	ON DELETE CASCADE
+    ON update cascade
 );
 
 create table Allergy(
 allergyName varchar (20) not null unique,
 managementStrategy varchar (100),
-seasonalconsiderations varchar (50),
+seasonalconsiderations varchar (100),
 primary key (allergyName)
 );
 
@@ -146,22 +169,22 @@ create table PatientAllergy(
 allergyName varchar (20) not null unique,
 patientID varchar (10) not null,
 severity varchar (6) Check(severity in ('Low', 'Medium', 'High')),
-description varchar (50),
+description varchar (300),
 primary key (allergyName, patientID),
-foreign key PatientAllergy(patientID) references Patient(patientID),
-foreign key PatientAllergy(allergyName) references PatientAllergy(allergyName)
+foreign key PatientAllergy(patientID) references Patient(patientID)
+	ON delete cascade
+    ON UPDATE cascade,
+foreign key PatientAllergy(allergyName) references Allergy(allergyName)
 );
 
 create table AllergySymptoms(
 allergyName varchar (20) not null,
 symptoms varchar (160),
 severity varchar (6) Check(severity in ('Low', 'Medium', 'High')),
-primary key (allergyName));
-
-
-#create table AllergyTreatment ##DO WE NEED THIS???
-
-#create table MealPlan ##CAN THIS COMBINE INTO PLAN AND FOOD THING??
+primary key (allergyName),
+foreign key AllergySymptoms(allergyName) references Allergy(allergyName)
+	ON DELETE cascade
+    ON UPDATE cascade);
 
 create table Visitor(
 visitorID varchar (10) not null,
@@ -176,14 +199,20 @@ patientID varchar (10) not null,
 VisitDate date,
 notes varchar (100),
 primary key (visitID),
-foreign key Visit(visitorID) references Visitor(visitorID),
-foreign key PIDVisit(patientID) references Patient(patientID));
+foreign key Visit(visitorID) references Visitor(visitorID)
+	ON delete cascade
+    ON update cascade,
+foreign key PIDVisit(patientID) references Patient(patientID)
+	ON delete cascade
+    ON update cascade);
 
 create table VisitorPhone(
 visitorID varchar (10) not null, 
 phone varchar (15),
 primary key (visitorID),
 foreign key VisitorPhone(visitorID) references Visitor(visitorID)
+	ON delete cascade
+    on update cascade
 );
 
 create table food(
@@ -200,24 +229,60 @@ foodname varchar (50) not null,
 allergyName varchar (20) not null,
 ConflictCheck boolean,
 primary key (foodname, allergyName),
-foreign key FoodAllergyConflict(foodname) references food(foodname),
-foreign key FoodAllergyConflict(allergyName) references Allergy(allergyName));
+foreign key FoodAllergyConflict(foodname) references food(foodname)
+	ON delete cascade
+    ON update cascade,
+foreign key FoodAllergyConflict(allergyName) references Allergy(allergyName)
+	ON delete cascade
+    ON update cascade);
 
 create table MedAllergyConflict(
 allergyName varchar (20) not null,
 medID varchar (10) not null, 
 ConflictCheck boolean,
 primary key (allergyName, medID),
-foreign key MedAllergyConflict(medID) references Medication(medID),
-foreign key MedAllergyConflict(allergyName) references Allergy(allergyName));
+foreign key MedAllergyConflict(medID) references Medication(medID)
+	ON delete cascade
+    ON update cascade,
+foreign key MedAllergyConflict(allergyName) references Allergy(allergyName)
+	ON delete cascade
+    ON update cascade);
 
 create table MedtoMedConflict(
 medicationAID varchar (10) not null,
 medicationBID varchar (10) not null,
 ConflictCheck boolean,
 primary key (medicationAID, medicationBID),
-foreign key MedtoMedConflict(medicationAID) references Medication(medID),
-foreign key MedtoMedConflict(medicationBID) references Medication(medID));
+foreign key MedtoMedConflict(medicationAID) references Medication(medID)
+	ON delete cascade
+    ON update cascade,
+foreign key MedtoMedConflict(medicationBID) references Medication(medID)
+	ON delete cascade
+    ON update cascade);
+
+create table MealPlan(
+MealPlanID varchar (10) not null,
+schedule varchar (200),
+PatientID varchar (10),
+primary key (MealPlanID),
+foreign key MealPlan(PatientID) references Patient(PatientID)
+	ON DELETE NO ACTION
+    ON UPDATE cascade);
+
+create table Meal(
+MealPlanID varchar (10) not null,
+mealName varchar (50) not null,
+foodName1 varchar (50) not null,
+foodName2 varchar (50),
+type varchar (20),
+primary key (MealPlanID, mealName, foodName1),
+foreign key Meal(MealPlanID) references MealPlan(MealPlanID)
+	ON delete cascade
+    ON update cascade,
+foreign key Meal(foodName1) references food(foodName)
+	ON delete cascade
+    ON update cascade);
+
 
 ##INSERT STATEMENTS
 
@@ -231,8 +296,20 @@ insert into PatientPhone (PatientID,phone)
 (
 Select PatientID, 6478880121
 from Patient
+where patientID= '2516544'
 );
 
+insert into Allergy (allergyName, managementStrategy, seasonalconsiderations) values ('Peanuts', 
+'Avoid foods that may be contain or be in contact with peanuts, have epipen prepared', 'No Seasonal Considerations');
+
+insert into PatientAllergy
+(
+Select allergyName, PatientID, 'High', 'This patient will die if not given proper care after exposure'
+from Allergy, Patient
+where PatientID= '2516544' and AllergyName= 'Peanuts'
+);
+
+select allergyName, PatientID, severity, description from Patient Allergy
 
 
  
