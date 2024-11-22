@@ -13,7 +13,7 @@ Height smallint,
 Weight smallint,  
 AddressID varchar (10) unique,
 DNR boolean,
-MealPlanID varchar (10),
+InsuranceCheck boolean,
 PRIMARY KEY(PatientID)
  );
 create table PatientAddress
@@ -30,21 +30,7 @@ StreetName varchar (30),
 	ON DELETE CASCADE
     ON UPDATE CASCADE
 );
-create table PatientCondition
-(
- patientID varchar (10) not null,
- medicalCondition varchar (30) not null,
- description varchar (150), 
- diagnosisDate date, 
- diagnoserID varchar (10)
- ,primary key (patientID, medicalCondition),
- foreign key PatientCondition(diagnoserID) references Staff(staffID)
-	ON DELETE NO ACTION
-    ON UPDATE CASCADE,
- foreign key PatientCondition(patientID) references Patient(patientID)
-	ON DELETE cascade
-    ON UPDATE cascade
-);
+
 create table PatientPhone
 (
 patientID varchar(10) not null,
@@ -63,6 +49,22 @@ lasttime varchar (15),
 position varchar (20),
 department varchar (30),
 primary key (staffID)
+);
+
+create table PatientCondition
+(
+ patientID varchar (10) not null,
+ medicalCondition varchar (30) not null,
+ description varchar (150), 
+ diagnosisDate date, 
+ diagnoserID varchar (10)
+ ,primary key (patientID, medicalCondition),
+ foreign key PatientCondition(diagnoserID) references Staff(staffID)
+	ON DELETE NO ACTION
+    ON UPDATE CASCADE,
+ foreign key PatientCondition(patientID) references Patient(patientID)
+	ON DELETE cascade
+    ON UPDATE cascade
 );
 
 create table PatientStaffCare
