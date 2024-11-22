@@ -89,3 +89,6 @@ WHERE Severity = 'Low'
       SELECT AllergyName
       FROM FoodAllergyConflict
   );
+select*from ( PatientStaffCare );
+select*from ( Medication M );
+select*from ( PatientAllergy );
