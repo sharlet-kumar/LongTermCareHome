@@ -149,6 +149,14 @@ foreign key PatientMedication(prescribingDocID) references Staff(staffID)
     ON UPDATE cascade
 );
 
+create table MedsTreatCondition (
+medId varchar (10) not null, 
+conditionName varchar (30) not null,
+primary key (medID, conditionName),
+foreign key MedsTreatCondition(medID) references Medication(medID)
+	ON DELETE CASCADE
+    ON UPDATE cascade);
+
 create table MedicalSideEffects(
 medID varchar(10) not null,
 sideEffects varchar (50),
@@ -162,7 +170,7 @@ foreign key MedicalSideEffects(medID) references Medication(medID)
 create table Allergy(
 allergyName varchar (20) not null unique,
 managementStrategy varchar (100),
-seasonalconsiderations varchar (100),
+seasonalconsiderations boolean,
 primary key (allergyName)
 );
 
@@ -187,6 +195,16 @@ primary key (allergyName),
 foreign key AllergySymptoms(allergyName) references Allergy(allergyName)
 	ON DELETE cascade
     ON UPDATE cascade);
+    
+create table AllergyTreatment (
+allergyName varchar (20) not null,
+treatment varchar (160) not null,
+considerations varchar (160),
+primary key (allergyName, treatment),
+foreign key AllergyTreatment(allergyName) references Allergy(allergyName)
+	ON DELETE CASCADE
+    ON UPDATE cascade
+);
 
 create table Visitor(
 visitorID varchar (10) not null,
@@ -254,6 +272,7 @@ create table MedtoMedConflict(
 medicationAID varchar (10) not null,
 medicationBID varchar (10) not null,
 ConflictCheck boolean,
+severity varchar (6) Check(severity in ('Low', 'Medium', 'High')),
 primary key (medicationAID, medicationBID),
 foreign key MedtoMedConflict(medicationAID) references Medication(medID)
 	ON delete cascade
