@@ -1,7 +1,7 @@
 food_name,allergy_name
-Store,Mold
-Five,Pollen
-Him,Shellfish
-Store,Peanuts
-Five,Mold
-Five,Dust
+Set,Shellfish
+Morning,Mold
+Morning,Mold
+Morning,Latex
+Forget,Latex
+Morning,Pollen

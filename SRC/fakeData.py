@@ -27,6 +27,8 @@ health_conditions = ['Hypertension', 'Diabetes', 'Asthma', 'Heart Disease', 'Alz
 insurance_providers= ["Manulife", 'Sun Life', "Empire Life", "RBC Insurance Agency", 'Beneva', "Desjardins", 
                 "wawanesa Insurance", "Canada Lifey"]
 side_effects_list = ["Nausea", "Headache", "Dizziness", "Fatigue", "Dry mouth"]
+meal_names = ["Breakfast", "Lunch", "Dinner", "Snack"] 
+
 
 # Store unique IDs and data to use across related tables
 patient_ids = []
@@ -39,6 +41,7 @@ visitor_ids = []
 food_names = []
 all_phone_numbers = set()
 all_emails = set()
+meal_plans_data = [] 
 
 patient_conditions = {}  # {patient_id: [condition1, condition2, ...]}
 medication_condition_map = {}  # {med_id: [condition1, condition2, ...]}
@@ -46,6 +49,7 @@ med_med_conflicts = []  # [(med_a, med_b)]
 patient_allergy_map = {}  # {patient_id: [allergy1, allergy2, ...]}
 medication_allergy_map = {}  # {med_id: [allergy1, allergy2, ...]}
 food_allergy_conflicts = []
+food_allergy_map = {} 
 
 # Helper functions for unique data generation
 def generate_unique_id():
@@ -128,14 +132,14 @@ csv_files = {
     "AllergySymptom.csv": ['allergy_name', 'symptom', 'severity'],
     "AllergyTreatment.csv": ['allergy_name', 'treatment', 'considerations'],
     "PatientAllergies.csv": ['allergy_name', 'patient_id', 'severity', 'description'],
-    "visitor.csv": ['visitor_id', 'first_name', 'last_name', 'patient_id'],
-    "Visits.csv": ['visit_id', 'visitor_id', 'patient_id', 'date', 'time', 'notes'],
+    "visitor.csv": ['visitor_id', 'first_name', 'last_name'],
+    "Visits.csv": ['visit_id', 'visitor_id', 'patient_id', 'date', 'notes'],
     "VisitorPhone.csv": ['visitor_id', 'phone_number'],
-    "FoodAndNutrition.csv": ['food_name', 'type', 'calories', 'protein', 'carbs', 'fats'],
+    "FoodAndNutrition.csv": ['food_name', 'type', 'calories', 'protein', 'fats'],
     "MedAllergyConflict.csv": ['med_id', 'allergy_name', 'severity'],
     "MedMedConflict.csv": ['med_A', 'med_B', 'severity'],
-    "MealPlans.csv": ['meal_plan_id', 'date', 'schedule', 'patient_id'],
-    "Meal.csv": ['plan_id', 'food_name', 'portion', 'date', 'time'],
+    "MealPlans.csv": ['meal_plan_id', 'schedule', 'patient_id'],
+    "Meal.csv": ['meal_plan_id', 'meal_name', 'foodName1', 'foodName2',],
     "FoodAllergyConflict.csv": ['food_name', 'allergy_name'],
     "PatientMedication.csv": ['patient_id', 'med_id', 'dosage', 'admin_schedule', 'prescribing_doc_id']
 }
@@ -371,10 +375,9 @@ try:
         visitor_id = generate_unique_visitor_id()
         first_name = fake.first_name().replace("'", "''")
         last_name = fake.last_name().replace("'", "''")
-        patient_id = random.choice(patient_ids)
 
         visitor_write=writers["visitor.csv"]
-        visitor_write.writerow({'visitor_id':visitor_id, 'first_name':first_name, 'last_name':last_name, 'patient_id':patient_id})
+        visitor_write.writerow({'visitor_id':visitor_id, 'first_name':first_name, 'last_name':last_name})
 
 # Generate Visits
     for _ in range(num_visitors):
@@ -382,11 +385,10 @@ try:
         visitor_id = random.choice(visitor_ids)
         patient_id = random.choice(patient_ids)
         date = fake.date_this_year()
-        time = fake.time()
         notes = fake.sentence().replace("'", "''")
 
         visits_write=writers["Visits.csv"]
-        visits_write.writerow({'visit_id':visit_id, 'visitor_id':visitor_id, 'patient_id':patient_id, 'date':date, 'time':time, 'notes':notes})
+        visits_write.writerow({'visit_id':visit_id, 'visitor_id':visitor_id, 'patient_id':patient_id, 'date':date, 'notes':notes})
 
 # Generate VisitorPhone
     for visitor_id in visitor_ids:
@@ -401,11 +403,10 @@ try:
         food_type = random.choice(food_types)
         calories = random.randint(50, 300)
         protein = random.randint(0, 20)
-        carbs = random.randint(0, 50)
         fats = random.randint(0, 20)
 
         food_nutrition_writer=writers["FoodAndNutrition.csv"]
-        food_nutrition_writer.writerow({'food_name':food_name, 'type':type, 'calories':calories, 'protein':protein, 'carbs':carbs, 'fats':fats})
+        food_nutrition_writer.writerow({'food_name':food_name, 'type':type, 'calories':calories, 'protein':protein, 'fats':fats})
 
 # Generate MedAllergyConflict (conflicts between medications and allergies)
     for _ in range(num_medications // 2):
@@ -442,56 +443,66 @@ try:
             'allergy_name': allergy_name,
     })
 
-# Generate MealPlans for each patient
-    for patient_id in patient_ids:
+# Generate Meal Plans for every patient
+    for patient_id in patient_ids:  # Ensure every patient gets a meal plan
         meal_plan_id = generate_unique_meal_plan_id()
-        date = fake.date_this_year()
         schedule = random.choice(["Breakfast", "Lunch", "Dinner"])
 
+        # Add to MealPlans.csv
         meal_plans_writer = writers["MealPlans.csv"]
         meal_plans_writer.writerow({
             'meal_plan_id': meal_plan_id,
-            'date': date,
             'schedule': schedule,
             'patient_id': patient_id
         })
 
-        # Add the meal plan ID to the meal_plan_ids list
-        meal_plan_ids.append(meal_plan_id)
-
-    # Optionally generate additional random meal plans
-    for _ in range(num_meal_plans):  # num_meal_plans is additional meal plans
-        meal_plan_id = generate_unique_meal_plan_id()
-        patient_id = random.choice(patient_ids)
-        date = fake.date_this_year()
-        schedule = random.choice(["Breakfast", "Lunch", "Dinner"])
-
-        meal_plans_writer = writers["MealPlans.csv"]
-        meal_plans_writer.writerow({
+        # Store in meal_plans_data for later meal generation
+        meal_plans_data.append({
             'meal_plan_id': meal_plan_id,
-            'date': date,
-            'schedule': schedule,
             'patient_id': patient_id
         })
 
-        # Add the meal plan ID to the meal_plan_ids list
-        meal_plan_ids.append(meal_plan_id)
+# Generate Meals for each meal plan
+    for meal_plan in meal_plans_data:  # Iterate over the list of meal plan dictionaries
+        meal_plan_id = meal_plan['meal_plan_id']
+        patient_id = meal_plan['patient_id']
 
-    # Generate Meals for all meal plans
-    for meal_plan_id in meal_plan_ids:
+        # Get allergies for the patient
+        patient_allergies = patient_allergy_map.get(patient_id, [])
+
+        # Pre-generate all valid food pairs
+        valid_food_pairs = [
+            (food1, food2) for food1 in food_names for food2 in food_names
+            if food1 != food2 and
+            not any(
+                allergy in food_allergy_map.get(food1, []) or allergy in food_allergy_map.get(food2, [])
+                for allergy in patient_allergies
+            )
+        ]
+
+        if not valid_food_pairs:
+            print(f"No valid food pairs for PlanID={meal_plan_id}, PatientID={patient_id}.")
+            continue
+
+        assigned_foods = set()  # Reset for each meal plan
+
         for _ in range(random.randint(1, 3)):  # Each plan can have 1-3 meals
-            food_name = random.choice(food_names)
-            portion = random.randint(1, 3)
-            date = fake.date_this_year()
-            time = fake.time()
+            if not valid_food_pairs:
+                print(f"Exhausted valid food pairs for PlanID={meal_plan_id}.")
+                break
 
+            # Randomly pick a valid food pair
+            food1, food2 = random.choice(valid_food_pairs)
+            valid_food_pairs.remove((food1, food2))  # Remove the chosen pair to avoid reuse
+            assigned_foods.update([food1, food2])
+
+            # Write meal data to Meal.csv
             meal_writer = writers["Meal.csv"]
             meal_writer.writerow({
-                'plan_id': meal_plan_id,
-                'food_name': food_name,
-                'portion': portion,
-                'date': date,
-                'time': time
+                'meal_plan_id': meal_plan_id,
+                'meal_name': fake.word().capitalize(),
+                'foodName1': food1,
+                'foodName2': food2,
             })
 
 # Generate PatientMedication

@@ -1,114 +1,109 @@
 med_id,side_effect,severity
-88731730,Headache,Mild
-88731730,Fatigue,Moderate
-88731730,Headache,Mild
-45004660,Dizziness,Severe
-89951415,Nausea,Mild
-89951415,Headache,Moderate
-42420369,Dizziness,Mild
-42420369,Nausea,Mild
-01444773,Fatigue,Moderate
-01444773,Dry mouth,Mild
-01444773,Headache,Severe
-85502363,Fatigue,Severe
-29070642,Headache,Moderate
-88757620,Dry mouth,Severe
-39841491,Dizziness,Severe
-06496283,Dizziness,Moderate
-06496283,Headache,Mild
-06496283,Dizziness,Moderate
-09174481,Fatigue,Severe
-09174481,Dizziness,Mild
-17989593,Nausea,Severe
-17989593,Dizziness,Mild
-17989593,Headache,Mild
-45504868,Nausea,Mild
-45894069,Fatigue,Mild
-45894069,Fatigue,Moderate
-09191678,Dizziness,Mild
-09191678,Nausea,Mild
-41043936,Fatigue,Severe
-41043936,Headache,Mild
-41043936,Fatigue,Severe
-40417365,Dry mouth,Moderate
-77905815,Fatigue,Moderate
-77905815,Nausea,Severe
-77905815,Dry mouth,Moderate
-57475333,Headache,Mild
-41348086,Fatigue,Severe
-99856001,Dizziness,Mild
-99856001,Fatigue,Moderate
-18584425,Dizziness,Moderate
-18584425,Headache,Moderate
-18584425,Dizziness,Severe
-26731847,Fatigue,Moderate
-80553216,Headache,Moderate
-80553216,Dizziness,Mild
-80553216,Nausea,Moderate
-31520229,Headache,Moderate
-31520229,Dizziness,Severe
-31520229,Dizziness,Mild
-63134222,Dry mouth,Moderate
-63134222,Nausea,Moderate
-77460881,Dry mouth,Severe
-77460881,Nausea,Mild
-77460881,Fatigue,Moderate
-89232557,Dizziness,Mild
-28097299,Nausea,Severe
-00425670,Nausea,Severe
-78334708,Dizziness,Moderate
-07553841,Nausea,Mild
-07553841,Headache,Moderate
-07553841,Nausea,Mild
-70970340,Dizziness,Mild
-70970340,Fatigue,Moderate
-70970340,Nausea,Moderate
-96539268,Dizziness,Moderate
-91936252,Nausea,Severe
-91936252,Fatigue,Moderate
-77499713,Fatigue,Moderate
-97665411,Nausea,Moderate
-97665411,Dry mouth,Moderate
-97665411,Dizziness,Severe
-49823223,Headache,Moderate
-03770419,Nausea,Severe
-03770419,Fatigue,Severe
-03770419,Headache,Mild
-45722445,Headache,Moderate
-62432918,Headache,Moderate
-65032978,Dry mouth,Moderate
-65032978,Fatigue,Mild
-60208976,Dry mouth,Moderate
-60208976,Dizziness,Severe
-12006907,Headache,Severe
-12006907,Headache,Severe
-12006907,Nausea,Moderate
-77821388,Headache,Mild
-01644433,Headache,Moderate
-01644433,Headache,Severe
-01644433,Fatigue,Mild
-65089963,Dry mouth,Moderate
-48737434,Fatigue,Severe
-48737434,Dry mouth,Mild
-48737434,Dizziness,Moderate
-79183774,Nausea,Mild
-84035917,Dizziness,Moderate
-10171699,Dry mouth,Moderate
-10171699,Dry mouth,Moderate
-54465678,Nausea,Severe
-54465678,Headache,Severe
-54465678,Headache,Severe
-17948995,Headache,Moderate
-17948995,Fatigue,Severe
-17948995,Dry mouth,Mild
-00089736,Dizziness,Mild
-00089736,Dry mouth,Severe
-00089736,Dizziness,Mild
-74698452,Headache,Severe
-74698452,Headache,Moderate
-74698452,Nausea,Severe
-85840555,Dizziness,Mild
-87141682,Headache,Mild
-83809166,Dizziness,Severe
-07946288,Nausea,Mild
-39719475,Dry mouth,Mild
+45750260,Fatigue,Severe
+45750260,Nausea,Moderate
+85160198,Headache,Severe
+85160198,Nausea,Severe
+85160198,Dry mouth,Moderate
+10277929,Dry mouth,Mild
+06394156,Nausea,Severe
+06394156,Fatigue,Mild
+50747513,Dry mouth,Moderate
+50747513,Dry mouth,Severe
+50747513,Nausea,Moderate
+84700457,Dizziness,Moderate
+97755183,Dry mouth,Severe
+97755183,Dizziness,Mild
+34481960,Dry mouth,Severe
+01788803,Headache,Moderate
+01788803,Fatigue,Severe
+01788803,Fatigue,Mild
+83507044,Dizziness,Severe
+83507044,Headache,Mild
+18113767,Nausea,Moderate
+18113767,Dry mouth,Severe
+28673536,Headache,Mild
+28673536,Dry mouth,Moderate
+43145237,Nausea,Moderate
+75202414,Nausea,Mild
+75202414,Headache,Moderate
+37136880,Dry mouth,Severe
+25507831,Dizziness,Mild
+25507831,Dizziness,Moderate
+61482664,Fatigue,Severe
+61482664,Fatigue,Severe
+33858602,Dizziness,Mild
+55444067,Dry mouth,Mild
+72843025,Fatigue,Severe
+72843025,Dry mouth,Mild
+67320157,Headache,Mild
+67320157,Dry mouth,Mild
+15514130,Nausea,Moderate
+98642911,Nausea,Moderate
+98642911,Nausea,Severe
+98642911,Dizziness,Mild
+44592139,Fatigue,Moderate
+44592139,Fatigue,Mild
+37748551,Nausea,Severe
+37748551,Nausea,Severe
+37748551,Dry mouth,Mild
+23769568,Fatigue,Severe
+89179935,Dizziness,Severe
+89179935,Headache,Moderate
+29336737,Fatigue,Mild
+29336737,Fatigue,Severe
+29336737,Headache,Mild
+10918684,Dry mouth,Mild
+81279099,Dry mouth,Moderate
+03393347,Fatigue,Severe
+03393347,Dry mouth,Mild
+03393347,Nausea,Moderate
+61402244,Nausea,Mild
+61402244,Headache,Severe
+61402244,Dizziness,Moderate
+99337392,Dizziness,Severe
+99337392,Dizziness,Mild
+91876563,Nausea,Mild
+91876563,Headache,Moderate
+91876563,Fatigue,Severe
+84093616,Dry mouth,Severe
+80869164,Fatigue,Mild
+80869164,Dizziness,Severe
+80869164,Dizziness,Mild
+90357990,Headache,Moderate
+35924317,Fatigue,Moderate
+89169611,Headache,Mild
+59456435,Dizziness,Moderate
+59456435,Nausea,Severe
+16877872,Fatigue,Moderate
+16877872,Dry mouth,Moderate
+16877872,Dizziness,Mild
+41439978,Nausea,Mild
+06217050,Dry mouth,Severe
+34680391,Dizziness,Severe
+62157225,Fatigue,Severe
+62157225,Dizziness,Mild
+62157225,Dizziness,Moderate
+48424101,Nausea,Moderate
+48424101,Fatigue,Moderate
+48424101,Dizziness,Mild
+88315794,Nausea,Moderate
+51789547,Dizziness,Mild
+41585411,Dizziness,Moderate
+41585411,Dry mouth,Severe
+45347501,Fatigue,Mild
+28703220,Dizziness,Severe
+28703220,Dry mouth,Mild
+28703220,Nausea,Moderate
+86373761,Headache,Mild
+35171956,Dizziness,Moderate
+35171956,Dizziness,Severe
+35171956,Headache,Moderate
+75973043,Headache,Severe
+82100457,Dizziness,Moderate
+35783708,Fatigue,Moderate
+11953321,Nausea,Mild
+11953321,Dizziness,Moderate
+67512331,Headache,Severe
+46487555,Dry mouth,Mild
+46487555,Dizziness,Mild
+78726578,Fatigue,Severe
