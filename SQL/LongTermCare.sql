@@ -139,9 +139,9 @@ PatientID varchar (10) not null,
 medID varchar (10) not null,
 dosage smallint,
 AdminSchedule varchar (40),
-prescribingDocID varchar (10),
+prescribingDocID varchar (10) not null,
 primary key (patientID, prescribingDocID),
-foreign key Medication(patientID) references Patient(patientID)
+foreign key PatientMedication(patientID) references Patient(patientID)
 	ON DELETE CASCADE
     ON UPDATE cascade,
 foreign key PatientMedication(prescribingDocID) references Staff(staffID)
@@ -287,9 +287,12 @@ foreign key Meal(foodName1) references food(foodName)
 
 
 ##INSERT STATEMENTS
-
+#Statement Number 1#
 insert into food (foodname, foodgroup, calories, protein, fats)
 values ('Bowl of Scrambled Eggs', 'Protein', 326, 22, 24);
+
+#Statement Number 2# 
+#(It has multiple inserts as it uses the first one to step up the more complex/"interesting" second one)#
 
 insert into Patient (PatientID, firstName, lastName, Sex, Weight, DNR) values 
 ('2516544', 'William', 'Burgers', 'M', 165, 0);
@@ -301,17 +304,14 @@ from Patient
 where patientID= '2516544'
 );
 
-insert into Allergy (allergyName, managementStrategy, seasonalconsiderations) values ('Peanuts', 
-'Avoid foods that may be contain or be in contact with peanuts, have epipen prepared', 'No Seasonal Considerations');
+#Statement Number 3# 
+#(It has multiple as it uses the first one to step up the more complex/"interesting" second one)#
 
-insert into PatientAllergy
+insert into Visitor(visitorID, firstName, lastName) values ('6578080002', 'Paul', 'Burgers');
+
+insert into Visit(visitID, visitorID, patientID)
 (
-Select allergyName, PatientID, 'High', 'This patient will die if not given proper care after exposure'
-from Allergy, Patient
-where PatientID= '2516544' and AllergyName= 'Peanuts'
+Select '9809123456', visitorID, patientID
+from visitor, Patient
 );
-
-select allergyName, PatientID, severity, description from Patient Allergy
-
-
  
