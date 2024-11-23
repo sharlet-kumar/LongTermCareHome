@@ -1,0 +1,10 @@
+allergy_name,symptom,severity
+Peanuts,Sneezing,Severe
+Peanuts,Shortness of breath,Moderate
+Shellfish,Shortness of breath,Severe
+Pollen,Swelling,Severe
+Dust,Hives,Moderate
+Mold,Swelling,Severe
+Mold,Itchy eyes,Severe
+Mold,Shortness of breath,Moderate
+Latex,Swelling,Mild

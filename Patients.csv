@@ -1,0 +1,51 @@
+patient_id,first_name,last_name,dob,sex,height,weight,insurance,dnr_present,street_no,street_name,unit_no,city,province,country
+2140918092,Susan,Nguyen,1966-05-06,M,137,62,Y,N,59543,Rick Land,59,South Jacobhaven,IL,Canada
+6154582248,Paul,Hull,1930-02-14,F,143,140,N,Y,151,Robert Skyway,36,Johnton,MO,Canada
+4298946147,Douglas,Smith,1960-01-26,F,124,78,N,N,6739,Clark Glen,48,Sawyershire,PW,Canada
+0400194116,Luis,Mcintyre,1936-11-21,F,144,114,Y,Y,62426,Patterson Gardens,86,Garciaburgh,MS,Canada
+3697692481,Patricia,Rios,1954-07-27,M,152,130,Y,N,436,Barker Pass,79,West Michaelfort,VT,Canada
+8590414822,Angela,Oliver,1960-04-13,M,125,80,Y,Y,7937,Villegas Oval,35,Kaufmantown,OR,Canada
+0843197635,Lindsay,Salazar,1967-11-02,F,207,41,Y,Y,1957,Vanessa Canyon,30,Port Caleb,NV,US
+3391878434,Ronald,Ramsey,1968-07-25,F,201,56,Y,N,4862,Boyd Plains,76,Port Matthew,AL,Canada
+1316864775,Savannah,Cooper,1938-09-17,M,164,75,Y,Y,41663,Bryan Crossing,91,Port Michael,MP,US
+7358454827,Brian,George,1949-04-27,F,168,118,Y,N,394,Griffin Camp,62,Monicafurt,IA,Canada
+5912803772,Andres,Perry,1938-05-20,M,182,63,N,Y,29300,Rivera Springs,97,Thompsonborough,WI,US
+8598310378,Johnny,Ortega,1943-07-21,F,180,105,N,Y,381,Hess Fork,65,Draketon,PR,Canada
+4696781366,Joseph,Mayer,1931-04-19,M,164,91,N,Y,229,Linda Haven,9,Michellechester,MT,US
+5485904425,Lindsey,Cooper,1973-11-16,M,128,139,Y,N,39252,Beth Mountain,31,West James,VA,US
+7621236847,Ronald,Owens,1962-07-13,M,165,89,Y,Y,0472,Erik Mountain,59,North James,ND,Canada
+0353018462,William,Ortega,1952-06-28,F,216,74,N,Y,074,Blake Curve,35,New Normaview,KY,US
+8659610166,Cameron,Vega,1944-08-19,M,179,125,N,Y,02110,Hartman Flats,10,Port Cassandramouth,VI,Canada
+5802796036,Ryan,Frye,1943-05-15,M,134,89,Y,Y,084,Aaron Island,60,New Joelborough,DC,US
+6555845060,Tara,Pearson,1954-02-24,M,201,85,N,Y,34141,Lowe Roads,11,South Terrance,PW,Canada
+2688318933,Sierra,Friedman,1951-12-25,F,127,134,N,Y,09974,Sherry Drive,6,Yoderhaven,NJ,Canada
+0420572409,Elizabeth,Jones,1925-06-25,M,194,82,Y,N,834,Emily Village,51,Port Markburgh,FM,Canada
+5053135673,Aimee,Diaz,1937-10-04,M,163,92,Y,N,6244,Roberts Crest,77,Katelynchester,MT,Canada
+1030026143,Laurie,Weaver,1932-08-19,F,174,90,N,N,98552,Andrew Mountains,52,Port Gina,AS,Canada
+2079180245,Robert,Barrett,1938-05-25,M,182,46,Y,Y,3119,Sims Hill,82,Jonesside,NM,Canada
+8872642132,Rachel,Koch,1953-08-18,M,206,104,N,Y,5758,Angela Via,73,Jenniferbury,WV,Canada
+4874502726,Jennifer,Bolton,1949-08-04,F,163,96,Y,Y,3262,Michelle Shore,80,Port Loganshire,MD,US
+4291638959,Christine,Robinson,1953-09-25,M,175,113,N,N,74808,Clark Rapid,53,Lake Jesusville,OH,US
+4494322658,Shane,Gomez,1926-05-28,M,189,44,N,Y,22747,Brenda Vista,2,East James,MN,US
+8374682610,Justin,Jones,1959-03-08,M,195,74,Y,Y,335,Janet Squares,15,Teresaton,CT,Canada
+8399165271,Bobby,Pennington,1947-07-24,F,127,46,N,Y,748,Harris Trafficway,7,Port Tylerview,VI,US
+6607178424,Omar,Kim,1927-08-13,F,172,96,N,N,5088,Pope Gateway,55,East Benjamin,DC,Canada
+1471097068,Gregory,Morton,1973-03-25,F,174,70,Y,N,627,Brianna Squares,74,Lake Haley,LA,Canada
+6470367875,Jennifer,Thomas,1960-05-05,M,206,104,N,Y,7777,Gregory Oval,34,Port Jameschester,MA,Canada
+6148657227,Kimberly,Gonzalez,1957-03-14,F,177,57,N,N,4539,Jacob Causeway,22,Katrinamouth,ME,Canada
+9213103627,Michael,Vazquez,1940-05-09,M,128,128,Y,Y,51559,Kimberly Fall,99,Benjaminview,WV,Canada
+8161196768,Jose,West,1953-08-15,F,175,123,N,Y,6543,Sanchez Street,10,Lake Cheyennetown,MN,Canada
+9152253515,Rachel,Lutz,1946-12-25,F,152,110,N,Y,6805,Ortiz Manors,67,Lake Richardton,MA,Canada
+9325112013,Jessica,Good,1967-04-11,M,177,64,Y,Y,83303,Keith Union,21,New David,PW,Canada
+5189721835,Matthew,Gray,1932-01-23,M,175,72,N,Y,516,Gregory Gateway,60,South Nicoleborough,AR,Canada
+0756659098,Edward,Hayes,1954-04-12,F,144,48,N,Y,6242,Morris Mill,45,South Robertland,AK,Canada
+5354295253,Brandy,Ward,1935-05-04,F,148,104,N,Y,66724,Day Ports,67,South Tinahaven,IL,Canada
+1715280423,Lisa,Marshall,1971-03-12,M,125,74,N,Y,44438,Payne Square,36,East Dylanstad,MT,Canada
+2624012582,Anthony,Brennan,1936-02-10,M,149,58,Y,Y,115,Yvonne Oval,73,Eileentown,WV,US
+6759227396,Kristen,Todd,1944-02-02,M,137,52,N,N,82800,Diane Lake,52,Teresahaven,MD,Canada
+9294910421,Michael,Graham,1970-09-03,M,135,93,N,Y,7089,Diaz Fords,29,Cooperbury,IN,Canada
+0105345302,David,Carrillo,1961-03-31,M,130,126,N,Y,51872,Jordan Corner,83,Strongmouth,OH,Canada
+6495745127,Tara,Smith,1933-07-24,F,185,127,Y,Y,21687,Hines Skyway,26,Kingborough,NC,Canada
+4758781483,Kathryn,Hayes,1938-06-09,F,172,145,N,N,8538,Antonio Manor,61,South Paulaview,CO,US
+6152705908,William,Thompson,1970-03-16,M,215,86,Y,Y,2428,Pugh Brook,91,Robinsonville,GU,Canada
+3778775436,Lindsay,Garcia,1950-10-16,M,161,50,N,Y,04148,Brianna Haven,57,Ballberg,IN,Canada
