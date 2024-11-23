@@ -1,435 +1,444 @@
 -- Patients Table
 
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('447505059876', 'Veronica', 'Knight', '1947-08-26', 151, 54, 'Y', 'F', 'Y', '414', 'Williams Walks', 41, 'Lake Dorothyland', 'ME', 'Canada');
-        
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('447505059876', '001-370-204-7818x5818');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('447505059876', '8673438444');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('447505059876', '927.867.0899');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('447505059876', 'wwalker@example.net');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('447505059876', 'cynthia33@example.org');
+--ignore this file, of no use
 
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('780755542315', 'Michelle', 'Diaz', '1998-08-24', 178, 56, 'N', 'F', 'Y', '8371', 'Murphy Pass', 85, 'New Michael', 'WY', 'US');
+        INSERT INTO Patients (patient_id, first_name, last_name, dob, sex, height, weight, insurance, dnr_present, street_no, street_name, unit_no, city, province, country)
+        VALUES ('1946382308', 'Gerald', 'Guzman', '1952-10-14','M', 166, 84, 'Y', 'Y', '4476', 'Macias Road', 17, 'West Frankburgh', 'CA', 'Canada');
         
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('780755542315', '739.642.1527');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('780755542315', '001-863-634-5926');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('780755542315', '788.370.1824x20709');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('780755542315', 'tonyadixon@example.org');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('780755542315', 'edwardsjimmy@example.net');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('1946382308', '+1-539-353-1081x0643');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('1946382308', '(631)740-1172x13910');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('1946382308', '623.963.8439x692');
+INSERT INTO PatientEmails (patient_id, email) VALUES ('1946382308', 'sandra73@example.com');
+INSERT INTO PatientEmails (patient_id, email) VALUES ('1946382308', 'andersonamber@example.net');
 
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('034118677807', 'Amy', 'Moore', '1949-09-30', 165, 76, 'Y', 'M', 'Y', '8293', 'Mitchell Port', 95, 'West Rebeccafurt', 'ME', 'Canada');
+        INSERT INTO Patients (patient_id, first_name, last_name, dob, sex, height, weight, insurance, dnr_present, street_no, street_name, unit_no, city, province, country)
+        VALUES ('9848953975', 'Heather', 'Williams', '1960-11-15','F', 127, 150, 'Y', 'Y', '0927', 'Patterson Loaf', 33, 'Jillbury', 'ND', 'US');
         
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('034118677807', '(540)414-2113x66958');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('034118677807', '(746)884-1066x3602');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('034118677807', 'brownjake@example.com');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('9848953975', '455-699-8264x020');
+INSERT INTO PatientEmails (patient_id, email) VALUES ('9848953975', 'donald36@example.org');
+INSERT INTO PatientEmails (patient_id, email) VALUES ('9848953975', 'austinpeters@example.com');
 
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('585430752205', 'Melissa', 'Gray', '1965-10-28', 207, 102, 'N', 'M', 'Y', '869', 'Murphy Islands', 28, 'Morganbury', 'AS', 'Canada');
+        INSERT INTO Patients (patient_id, first_name, last_name, dob, sex, height, weight, insurance, dnr_present, street_no, street_name, unit_no, city, province, country)
+        VALUES ('3874295759', 'Nathan', 'Schmitt', '1961-04-28','M', 123, 92, 'Y', 'N', '0005', 'Lindsay Junctions', 4, 'Colleenberg', 'LA', 'Canada');
         
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('585430752205', '(838)692-2155');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('585430752205', '7102786559');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('585430752205', '(783)379-6972');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('585430752205', 'jeffreyfrench@example.net');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('585430752205', 'fsimpson@example.com');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('3874295759', '(331)576-6560x4313');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('3874295759', '+1-571-661-0761');
+INSERT INTO PatientEmails (patient_id, email) VALUES ('3874295759', 'ycox@example.com');
+INSERT INTO PatientEmails (patient_id, email) VALUES ('3874295759', 'elucero@example.com');
 
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('016450454611', 'Theresa', 'Bell', '1929-03-26', 145, 117, 'N', 'M', 'Y', '7884', 'Clark Court', 19, 'West Christopher', 'AL', 'US');
+        INSERT INTO Patients (patient_id, first_name, last_name, dob, sex, height, weight, insurance, dnr_present, street_no, street_name, unit_no, city, province, country)
+        VALUES ('8104261653', 'Elizabeth', 'Combs', '1931-06-02','M', 177, 55, 'Y', 'N', '73881', 'Brent Unions', 61, 'Watersview', 'VA', 'Canada');
         
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('016450454611', '(539)751-9244');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('016450454611', 'rschwartz@example.org');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('8104261653', '747-380-1748x37830');
+INSERT INTO PatientEmails (patient_id, email) VALUES ('8104261653', 'mary41@example.org');
 
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('215449313750', 'Alec', 'Nelson', '1958-12-30', 208, 139, 'Y', 'M', 'Y', '3444', 'Michael Cliff', 10, 'Lake Karen', 'OR', 'Canada');
+        INSERT INTO Patients (patient_id, first_name, last_name, dob, sex, height, weight, insurance, dnr_present, street_no, street_name, unit_no, city, province, country)
+        VALUES ('0170420117', 'Amanda', 'Gonzalez', '1973-08-03','F', 180, 48, 'N', 'Y', '20237', 'Durham Mall', 64, 'Lake Rogerstad', 'NY', 'Canada');
         
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('215449313750', '422-831-4658x8307');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('215449313750', '(702)656-7023x50950');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('215449313750', 'pdawson@example.net');
-
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('344843598556', 'Robert', 'Castillo', '1948-07-05', 134, 72, 'Y', 'M', 'Y', '493', 'Lynch Track', 25, 'Rochastad', 'DC', 'Canada');
-        
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('344843598556', '+1-858-308-4082x143');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('344843598556', '+1-877-516-8670x18668');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('344843598556', '(243)651-3262x4895');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('344843598556', 'whitesamantha@example.com');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('344843598556', 'gomezamanda@example.org');
-
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('478251737906', 'Robert', 'Barry', '1984-06-21', 139, 91, 'Y', 'F', 'N', '0854', 'Dillon Cove', 76, 'Lisaburgh', 'PA', 'Canada');
-        
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('478251737906', '835-620-7059x24437');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('478251737906', '001-491-779-6959x66799');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('478251737906', 'fwilliams@example.org');
-
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('671560675872', 'Nancy', 'Anderson', '1961-03-07', 147, 45, 'N', 'M', 'Y', '28776', 'Eddie Curve', 7, 'Port Diane', 'CO', 'Canada');
-        
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('671560675872', '(824)785-4774x975');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('671560675872', '2762068815');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('671560675872', '643-397-9594x905');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('671560675872', 'eugenesavage@example.net');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('671560675872', 'danielwhite@example.org');
-
-        INSERT INTO Patients (patient_id, first_name, last_name, dob, height, weight, insurance, sex, dnr_present, street_no, street_name, unit_no, city, province, country)
-        VALUES ('450588859969', 'Amanda', 'Scott', '1943-03-06', 209, 91, 'Y', 'M', 'Y', '917', 'Kimberly Heights', 69, 'East Richard', 'DC', 'US');
-        
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('450588859969', '734.698.2878x0078');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('450588859969', '+1-401-478-4228x66287');
-INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('450588859969', '001-633-237-4875x11926');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('450588859969', 'claudia43@example.org');
-INSERT INTO PatientEmails (patient_id, email) VALUES ('450588859969', 'kevinjensen@example.net');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('0170420117', '(637)240-4951x2658');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('0170420117', '001-387-939-1960');
+INSERT INTO PatientPhones (patient_id, phone_number) VALUES ('0170420117', '+1-493-654-8135x8874');
+INSERT INTO PatientEmails (patient_id, email) VALUES ('0170420117', 'vmora@example.org');
 
 -- Staff Table
 
         INSERT INTO Staff (Staff_ID, firstName, lastName, Position, Department)
-        VALUES ('605657', 'Megan', 'Fleming', 'Doctor', 'Oncology');
+        VALUES ('847151', 'Jonathan', 'Robinson', 'Administrator', 'Cardiology');
         
-INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('605657', '(326)607-6721');
+INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('847151', '278-690-8784');
 
         INSERT INTO Staff (Staff_ID, firstName, lastName, Position, Department)
-        VALUES ('166505', 'Donna', 'May', 'Technician', 'Pediatrics');
+        VALUES ('733871', 'Shelley', 'Ware', 'Nurse', 'Cardiology');
         
-INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('166505', '734.877.2981x103');
+INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('733871', '+1-224-200-2495x2022');
 
         INSERT INTO Staff (Staff_ID, firstName, lastName, Position, Department)
-        VALUES ('406102', 'Sean', 'Graham', 'Technician', 'Radiology');
+        VALUES ('132244', 'Traci', 'Simmons', 'Doctor', 'Cardiology');
         
-INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('406102', '356-523-0381x76671');
+INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('132244', '(284)321-7255');
 
         INSERT INTO Staff (Staff_ID, firstName, lastName, Position, Department)
-        VALUES ('736356', 'Jose', 'Daniels', 'Administrator', 'Oncology');
+        VALUES ('850415', 'Paul', 'Brandt', 'Nurse', 'Cardiology');
         
-INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('736356', '(233)742-1069x72821');
-
-        INSERT INTO Staff (Staff_ID, firstName, lastName, Position, Department)
-        VALUES ('591508', 'Mason', 'Jones', 'Nurse', 'Radiology');
-        
-INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('591508', '001-965-744-8663x410');
-
--- Medications Table
-
-        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
-        VALUES (089912, 'Close', 'Antibiotic', 'Topical', 'Store at room temperature');
-        
-
-        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
-        VALUES (033175, 'Responsibility', 'Antiviral', 'Oral', 'Avoid direct sunlight');
-        
-
-        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
-        VALUES (920724, 'Soldier', 'Antibiotic', 'Topical', 'Keep refrigerated');
-        
-
-        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
-        VALUES (318216, 'Law', 'Antiviral', 'Injectable', 'Keep refrigerated');
-        
-
-        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
-        VALUES (320627, 'Away', 'Analgesic', 'Injectable', 'Keep refrigerated');
-        
-
--- PatientAllergies Table
-
-        INSERT INTO PatientAllergies (allergyName, patientID, severity, description)
-        VALUES ('Latex', '344843598556', 'Moderate', 'Lot early future already.');
-        
-
-        INSERT INTO PatientAllergies (allergyName, patientID, severity, description)
-        VALUES ('Latex', '780755542315', 'Severe', 'Leg know wall bring card another close.');
-        
-
-        INSERT INTO PatientAllergies (allergyName, patientID, severity, description)
-        VALUES ('Pollen', '450588859969', 'Mild', 'Improve stuff answer improve yes expect.');
-        
-
-        INSERT INTO PatientAllergies (allergyName, patientID, severity, description)
-        VALUES ('Peanuts', '034118677807', 'Mild', 'Generation student assume walk toward.');
-        
-
-        INSERT INTO PatientAllergies (allergyName, patientID, severity, description)
-        VALUES ('Dust', '478251737906', 'Mild', 'Sing another want full alone.');
-        
-
--- MedAllergyConflict Table
-
-        INSERT INTO MedAllergyConflict (medID, allergyName, severity)
-        VALUES ('320627', 'Shellfish', 'Low');
-        
-
-        INSERT INTO MedAllergyConflict (medID, allergyName, severity)
-        VALUES ('320627', 'Mold', 'Medium');
-        
+INSERT INTO StaffPhone (Staff_ID, phone) VALUES ('850415', '+1-330-681-4164');
 
 -- PatientMedicalConditions Table
 
         INSERT INTO PatientMedicalConditions (patientID, medicalCondition, description, diagnosisDate, diagnoserID)
-        VALUES ('034118677807', 'Dementia', 'Read our property organization.', '2023-07-30', '605657');
+        VALUES ('3874295759', 'Cataracts', 'Feel piece matter sell want garden candidate.', '2023-08-22', '132244');
         
 
         INSERT INTO PatientMedicalConditions (patientID, medicalCondition, description, diagnosisDate, diagnoserID)
-        VALUES ('780755542315', 'Depression', 'Piece identify television hospital.', '2024-03-08', '605657');
+        VALUES ('3874295759', 'High Cholesterol', 'Air head toward others stock close book pass.', '2024-09-20', '132244');
         
 
-        INSERT INTO PatientMedicalConditions (patientID, medicalCondition, description, diagnosisDate, diagnoserID)
-        VALUES ('215449313750', 'Alzheimers', 'Everything policy space control different key.', '2021-10-08', '605657');
+-- PatientStaffCare Table
+
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('850415', '0170420117', 'Technician', '2024-04-21', '2024-08-31');
         
-
-        INSERT INTO PatientMedicalConditions (patientID, medicalCondition, description, diagnosisDate, diagnoserID)
-        VALUES ('585430752205', 'Allergies', 'Fill various follow three direction skin light avoid.', '2020-10-31', '605657');
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('132244', '9848953975', 'Primary Care', '2024-02-06', '2024-06-24');
         
-
-        INSERT INTO PatientMedicalConditions (patientID, medicalCondition, description, diagnosisDate, diagnoserID)
-        VALUES ('585430752205', 'Gout', 'Same wind behavior or music.', '2024-04-03', '605657');
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('847151', '0170420117', 'Specialist', '2024-01-12', '2024-06-03');
         
-
--- MedMedConflict Table
-
-        INSERT INTO MedMedConflict (medicationA, medicationB, severity)
-        VALUES ('320627', '920724', 'Medium');
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('733871', '3874295759', 'Technician', '2024-07-21', '2024-08-16');
         
-
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('847151', '1946382308', 'Specialist', '2024-04-11', '2024-07-19');
+        
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('733871', '3874295759', 'Technician', '2024-07-10', '2024-11-02');
+        
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('850415', '9848953975', 'Specialist', '2024-04-11', '2024-07-17');
+        
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('850415', '3874295759', 'Technician', '2024-01-19', '2024-10-31');
+        
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('847151', '1946382308', 'Specialist', '2024-01-21', '2024-02-24');
+        
+        INSERT INTO PatientStaffCare (staffID, patientID, staffRoleInCare, careStartDate, careEndDate)
+        VALUES ('733871', '1946382308', 'Primary Care', '2024-03-29', '2024-08-24');
+        
 -- Insurance Table
+
+        INSERT INTO Insurance (policyID, provider, streetNo, streetName, unitNo, city, province, country, patientID)
+        VALUES ('6839', 'RBC Insurance Agency', '2541', 'Scott Ville', 79, 'Waynefort', 'MD', 'Canada', '1946382308');
+        
+INSERT INTO InsuranceCoverageDetails (policyID, coverageDetails) VALUES ('6839', 'Nor record program about.');
+
+        INSERT INTO Insurance (policyID, provider, streetNo, streetName, unitNo, city, province, country, patientID)
+        VALUES ('5833', 'Sun Life', '2826', 'Jonathan Bridge', 3, 'East Robert', 'OR', 'Canada', '9848953975');
+        
+INSERT INTO InsuranceCoverageDetails (policyID, coverageDetails) VALUES ('5833', 'Full wide information Democrat.');
+
+        INSERT INTO Insurance (policyID, provider, streetNo, streetName, unitNo, city, province, country, patientID)
+        VALUES ('3036', 'Sun Life', '3498', 'Saunders Causeway', 93, 'Kleinberg', 'GA', 'Canada', '3874295759');
+        
+INSERT INTO InsuranceCoverageDetails (policyID, coverageDetails) VALUES ('3036', 'Property approach art paper as continue on.');
+
+        INSERT INTO Insurance (policyID, provider, streetNo, streetName, unitNo, city, province, country, patientID)
+        VALUES ('1658', 'Desjardins', '241', 'Callahan Gateway', 79, 'Port Jamesstad', 'VA', 'Canada', '8104261653');
+        
+INSERT INTO InsuranceCoverageDetails (policyID, coverageDetails) VALUES ('1658', 'Suddenly teacher people investment theory.');
+-- Medications Table
+
+        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
+        VALUES ('74867845', 'Upon', 'Antidepressant', 'Oral', 'Avoid direct sunlight');
+        
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('74867845', 'Dementia');
+            
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('74867845', 'Allergies');
+            
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('74867845', 'Hypertension');
+            
+
+        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
+        VALUES ('02828446', 'Reduce', 'Analgesic', 'Injectable', 'Store at room temperature');
+        
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('02828446', 'Cataracts');
+            
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('02828446', 'Arthritis');
+            
+
+        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
+        VALUES ('55165356', 'Car', 'Antiviral', 'Topical', 'Keep refrigerated');
+        
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('55165356', 'Cancer');
+            
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('55165356', 'Hypertension');
+            
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('55165356', 'Anemia');
+            
+
+        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
+        VALUES ('81674331', 'About', 'Analgesic', 'Topical', 'Keep refrigerated');
+        
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('81674331', 'Arthritis');
+            
+
+        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
+        VALUES ('81942911', 'Foreign', 'Analgesic', 'Oral', 'Avoid direct sunlight');
+        
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('81942911', 'Anemia');
+            
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('81942911', 'Migraine');
+            
+
+        INSERT INTO Medication (medID, medName, drugClass, administrationDetails, storageDetails)
+        VALUES ('77131128', 'Area', 'Antibiotic', 'Topical', 'Avoid direct sunlight');
+        
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('77131128', 'Gout');
+            
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('77131128', 'Alzheimers');
+            
+
+            INSERT INTO MedicationConditions (medID, conditionName)
+            VALUES ('77131128', 'Osteoporosis');
+            
 
 -- MedicationSideEffects Table
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('089912', 'Dizziness', 'Moderate');
+            VALUES ('74867845', 'Nausea', 'Mild');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('089912', 'Headache', 'Mild');
+            VALUES ('74867845', 'Fatigue', 'Mild');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('033175', 'Nausea', 'Mild');
+            VALUES ('74867845', 'Headache', 'Mild');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('920724', 'Headache', 'Mild');
+            VALUES ('02828446', 'Nausea', 'Mild');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('920724', 'Nausea', 'Moderate');
+            VALUES ('02828446', 'Dizziness', 'Moderate');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('920724', 'Headache', 'Moderate');
+            VALUES ('55165356', 'Dizziness', 'Mild');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('318216', 'Dry mouth', 'Mild');
+            VALUES ('55165356', 'Nausea', 'Moderate');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('318216', 'Nausea', 'Severe');
+            VALUES ('81674331', 'Nausea', 'Mild');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('320627', 'Dizziness', 'Mild');
+            VALUES ('81674331', 'Dizziness', 'Moderate');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('320627', 'Nausea', 'Severe');
+            VALUES ('81674331', 'Fatigue', 'Moderate');
             
 
             INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
-            VALUES ('320627', 'Dry mouth', 'Severe');
+            VALUES ('81942911', 'Dizziness', 'Mild');
+            
+
+            INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
+            VALUES ('77131128', 'Headache', 'Moderate');
+            
+
+            INSERT INTO MedicationSideEffects (medID, sideEffect, severity)
+            VALUES ('77131128', 'Nausea', 'Mild');
             
 
 -- Allergy Table
 
         INSERT INTO Allergy (allergyName, type, managementStrategy, seasonalConsiderations)
-        VALUES ('Peanuts', 'Drug', 'Practice friend organization three ok Congress name.', 'No');
+        VALUES ('Peanuts', 'Drug', 'American form already meeting.', 'No');
         
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Peanuts', 'Itchy eyes', 'Mild');
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Peanuts', 'Shortness of breath', 'Moderate');
-INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Peanuts', 'Dream every important leader find occur wait.', 'Own general summer ahead.');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Peanuts', 'Sneezing', 'Severe');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Peanuts', 'Sneezing', 'Mild');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Peanuts', 'Itchy eyes', 'Moderate');
+INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Peanuts', 'True break most green which dream will.', 'Whether other at leave.');
 
         INSERT INTO Allergy (allergyName, type, managementStrategy, seasonalConsiderations)
-        VALUES ('Shellfish', 'Drug', 'Treatment rise pass single network.', 'No');
+        VALUES ('Shellfish', 'Food', 'Choose great computer.', 'No');
         
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Shellfish', 'Sneezing', 'Severe');
-INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Shellfish', 'Customer store manager theory budget him.', 'Remember wide free son ahead ground.');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Shellfish', 'Hives', 'Severe');
+INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Shellfish', 'Exist near care others catch keep world pull.', 'Commercial say develop room trial.');
 
         INSERT INTO Allergy (allergyName, type, managementStrategy, seasonalConsiderations)
-        VALUES ('Pollen', 'Drug', 'Eat gas fly pretty left wrong.', 'Yes');
+        VALUES ('Pollen', 'Food', 'Hand great significant sport firm quite.', 'Yes');
         
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Pollen', 'Sneezing', 'Moderate');
 INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Pollen', 'Itchy eyes', 'Moderate');
 INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Pollen', 'Hives', 'Severe');
-INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Pollen', 'Large fall nor doctor.', 'Soon main ready every nature.');
+INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Pollen', 'Thought miss impact country outside research.', 'None government near get hear game.');
 
         INSERT INTO Allergy (allergyName, type, managementStrategy, seasonalConsiderations)
-        VALUES ('Dust', 'Drug', 'Not everything dream former soldier admit.', 'Yes');
+        VALUES ('Dust', 'Drug', 'American hour someone card.', 'No');
         
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Dust', 'Hives', 'Moderate');
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Dust', 'Hives', 'Moderate');
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Dust', 'Sneezing', 'Mild');
-INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Dust', 'Certain local everybody threat audience decade help.', 'According alone card develop big student.');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Dust', 'Swelling', 'Mild');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Dust', 'Shortness of breath', 'Moderate');
+INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Dust', 'Mother political shoulder detail sort.', 'Race common finish reduce.');
 
         INSERT INTO Allergy (allergyName, type, managementStrategy, seasonalConsiderations)
-        VALUES ('Mold', 'Food', 'Than would wide.', 'No');
+        VALUES ('Mold', 'Food', 'Professional new politics ask research and list.', 'No');
         
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Mold', 'Hives', 'Severe');
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Mold', 'Hives', 'Severe');
-INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Mold', 'Agency book try hour energy.', 'Table build wind quickly know remember plant leave.');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Mold', 'Swelling', 'Mild');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Mold', 'Sneezing', 'Moderate');
+INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Mold', 'Try nothing course force.', 'Matter TV perform baby hand.');
 
         INSERT INTO Allergy (allergyName, type, managementStrategy, seasonalConsiderations)
-        VALUES ('Latex', 'Environmental', 'Audience the chair rule.', 'No');
+        VALUES ('Latex', 'Drug', 'Unit above some direction government game admit.', 'Yes');
         
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Latex', 'Shortness of breath', 'Moderate');
-INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Latex', 'Swelling', 'Mild');
-INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Latex', 'Worker themselves arrive laugh forward carry.', 'While daughter relationship around cause.');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Latex', 'Swelling', 'Moderate');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Latex', 'Swelling', 'Moderate');
+INSERT INTO AllergySymptoms (allergyName, symptom, severity) VALUES ('Latex', 'Shortness of breath', 'Mild');
+INSERT INTO AllergyTreatment (allergyName, treatment, considerations) VALUES ('Latex', 'Market husband treatment follow.', 'Hotel physical author then.');
 
--- VisitorPhone Table
+-- PatientAllergies Table
 
--- PlanMeals Table
-
--- MealPlan Table
-
-        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
-        VALUES ('078693', '2024-04-02', 'Dinner', '034118677807');
+        INSERT INTO PatientAllergies (allergyName, patientID, severity, description)
+        VALUES ('Shellfish', '9848953975', 'Mild', 'Involve shake with example box.');
         
 
-        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
-        VALUES ('874224', '2024-01-12', 'Dinner', '585430752205');
-        
-
-        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
-        VALUES ('154144', '2024-06-14', 'Dinner', '450588859969');
-        
-
-        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
-        VALUES ('846892', '2024-02-02', 'Breakfast', '447505059876');
-        
-
-        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
-        VALUES ('755891', '2024-07-22', 'Breakfast', '780755542315');
+        INSERT INTO PatientAllergies (allergyName, patientID, severity, description)
+        VALUES ('Mold', '1946382308', 'Severe', 'Ten man look maybe.');
         
 
 -- Visitor Table
 
         INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('920925', 'Vanessa', 'Mendoza', '344843598556');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('268909', 'Stephanie', 'Nicholson', '344843598556');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('077619', 'Melissa', 'Nelson', '215449313750');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('710477', 'Roger', 'Duncan', '016450454611');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('812711', 'Stephen', 'Jackson', '478251737906');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('509753', 'Jamie', 'Harris', '447505059876');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('123558', 'Angela', 'Bauer', '780755542315');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('715517', 'Sylvia', 'Odonnell', '215449313750');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('999292', 'Jason', 'Bishop', '344843598556');
-        
-
-        INSERT INTO Visitor (visitor_ID, firstName, lastName, patient_ID)
-        VALUES ('114811', 'Matthew', 'Krueger', '344843598556');
+        VALUES ('898428', 'Benjamin', 'Cooke', '3874295759');
         
 
 -- Visit Table
 
         INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('6709', '812711', '344843598556', '2024-08-27', '16:46:24', 'Glass rich process.');
+        VALUES ('7318', '898428', '9848953975', '2024-04-03', '14:09:21', 'Indicate note might fear peace light.');
         
 
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('6186', '812711', '450588859969', '2024-10-26', '23:08:00', 'Type billion writer each face.');
-        
-
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('7088', '114811', '450588859969', '2024-03-29', '00:51:54', 'Rather soon continue wear daughter.');
-        
-
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('2000', '999292', '478251737906', '2024-10-21', '22:50:34', 'Worker partner great miss collection.');
-        
-
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('1349', '123558', '780755542315', '2024-10-03', '10:04:38', 'Lay image middle seat center body our shoulder.');
-        
-
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('4314', '812711', '447505059876', '2024-05-08', '09:06:11', 'Cover would purpose catch green walk.');
-        
-
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('1359', '715517', '478251737906', '2024-06-08', '07:58:50', 'Remain especially charge cell.');
-        
-
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('2208', '114811', '016450454611', '2024-08-14', '04:29:55', 'Rich must whose loss never conference put.');
-        
-
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('9288', '812711', '034118677807', '2024-04-02', '09:39:26', 'Especially dinner never receive.');
-        
-
-        INSERT INTO Visit (visitID, visitorID, patientID, date, time, notes)
-        VALUES ('6967', '123558', '671560675872', '2024-10-16', '10:28:15', 'Between pull fly capital like single.');
-        
+-- VisitorPhone Table
+INSERT INTO VisitorPhone (visitor_ID, phone) VALUES ('898428', '539.453.0406');
 
 -- Food and FoodNutritionalVal Tables
 
         INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Focus', 'Grain', 279, 15, 5, 16);
+        VALUES ('Else', 'Vegetable', 225, 17, 46, 11);
         
 
         INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Maybe', 'Grain', 91, 4, 18, 0);
+        VALUES ('Beautiful', 'Grain', 247, 11, 28, 11);
         
 
         INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Talk', 'Grain', 279, 13, 50, 16);
+        VALUES ('Seem', 'Dairy', 71, 17, 16, 17);
         
 
-        INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Change', 'Fruit', 61, 18, 33, 14);
+-- MedAllergyConflict Table
+
+        INSERT INTO MedAllergyConflict (medID, allergyName, severity)
+        VALUES ('74867845', 'Latex', 'High');
         
 
-        INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('House', 'Dairy', 256, 6, 17, 10);
+        INSERT INTO MedAllergyConflict (medID, allergyName, severity)
+        VALUES ('74867845', 'Mold', 'Low');
         
 
-        INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Child', 'Protein', 173, 3, 41, 6);
+        INSERT INTO MedAllergyConflict (medID, allergyName, severity)
+        VALUES ('02828446', 'Peanuts', 'High');
+        
+-- MedMedConflict Table
+INSERT INTO MedMedConflict (medicationA, medicationB, severity) VALUES ('74867845', '81942911', 'High');
+
+-- MealPlan Table
+
+        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
+        VALUES ('115854', '2024-10-15', 'Breakfast', '0170420117');
         
 
-        INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Policy', 'Grain', 264, 17, 41, 9);
+        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
+        VALUES ('236298', '2024-08-02', 'Dinner', '0170420117');
         
 
-        INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Young', 'Vegetable', 222, 0, 31, 11);
+        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
+        VALUES ('764761', '2024-07-03', 'Dinner', '3874295759');
         
 
-        INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Indeed', 'Vegetable', 223, 8, 0, 15);
+        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
+        VALUES ('706054', '2024-03-21', 'Dinner', '3874295759');
         
 
-        INSERT INTO Food (foodName, type, calories, protein, carbs, fats)
-        VALUES ('Several', 'Protein', 163, 2, 30, 18);
+        INSERT INTO MealPlan (mealPlanID, date, schedule, patientID)
+        VALUES ('348493', '2024-10-17', 'Lunch', '9848953975');
         
+
+-- PlanMeals Table
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('115854', 'Else', 2, '2024-10-18', '22:44:05');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('115854', 'Seem', 1, '2024-09-23', '21:34:06');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('115854', 'Beautiful', 2, '2024-08-24', '02:14:20');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('236298', 'Seem', 2, '2024-03-10', '12:56:04');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('236298', 'Seem', 2, '2024-07-11', '16:58:55');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('236298', 'Seem', 3, '2024-11-10', '17:59:16');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('764761', 'Beautiful', 1, '2024-06-18', '12:12:22');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('706054', 'Seem', 3, '2024-08-08', '09:38:44');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('706054', 'Seem', 1, '2024-09-15', '19:14:45');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('706054', 'Else', 3, '2024-08-21', '11:40:33');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('348493', 'Seem', 2, '2024-01-16', '14:36:55');
+            
+
+            INSERT INTO PlanMeals (planID, foodName, portion, date, time)
+            VALUES ('348493', 'Else', 1, '2024-01-18', '16:50:49');
+            
+-- PatientMedication Table
+
+                INSERT INTO PatientMedication (PatientID, medID, dosage, AdminSchedule, prescribingDocID)
+                VALUES ('3874295759', '02828446', 10, 'Twice a Day', '132244');
+                
+
+                INSERT INTO PatientMedication (PatientID, medID, dosage, AdminSchedule, prescribingDocID)
+                VALUES ('3874295759', '77131128', 30, 'Evening', '132244');
+                
