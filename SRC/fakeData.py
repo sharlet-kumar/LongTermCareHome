@@ -9,8 +9,8 @@ fake = Faker()
 num_patients = 4000
 num_medications = 1000
 num_meal_plans = 200
-num_visitors = 500
-num_staff = 2000
+num_visitors = 800
+num_staff = 2500
 num_food_items = 100
 
 # Multi-value counts
