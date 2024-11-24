@@ -6,16 +6,15 @@ import csv
 fake = Faker()
 
 # Define counts for primary entities
-num_patients = 50
-num_medications = 60
-num_meal_plans = 5
-num_visitors = 1
-num_staff = 40
-num_food_items = 3
+num_patients = 4000
+num_medications = 1000
+num_meal_plans = 200
+num_visitors = 500
+num_staff = 2000
+num_food_items = 100
 
 # Multi-value counts
 num_phones_per_patient = (1, 3)
-num_emails_per_patient = (1, 2)
 num_conditions_per_patient = (0, 5)
 
 # Predeffined lists
@@ -40,8 +39,10 @@ meal_plan_ids = []
 visitor_ids = []
 food_names = []
 all_phone_numbers = set()
-all_emails = set()
 meal_plans_data = [] 
+policy_ids = []
+billing_address_ids = []
+
 
 patient_conditions = {}  # {patient_id: [condition1, condition2, ...]}
 medication_condition_map = {}  # {med_id: [condition1, condition2, ...]}
@@ -100,13 +101,6 @@ def generate_unique_phone():
         if phone_number not in all_phone_numbers:
             all_phone_numbers.add(phone_number)
             return phone_number
-
-def generate_unique_email():
-    while True:
-        email = fake.email().replace("'", "''")
-        if email not in all_emails:
-            all_emails.add(email)
-            return email
         
 def generate_csv_writer(file_name, fieldnames):
     file = open(file_name, 'w', newline='')
@@ -116,16 +110,16 @@ def generate_csv_writer(file_name, fieldnames):
 
 # Open CSV files
 csv_files = {
-    "Patients.csv": ['patient_id', 'first_name', 'last_name', 'dob', 'sex', 'height', 'weight', 'insurance', 'dnr_present', 'street_no', 'street_name', 'unit_no', 'city', 'province', 'country'],
+    "Patients.csv": ['patient_id', 'first_name', 'last_name', 'dob', 'sex', 'height', 'weight', 'insurance_check', 'dnr', 'address_id'],
     "Medications.csv": ['med_id', 'med_name', 'drug_class', "administration_details", 'storage_details'],
     "PatientPhone.csv": ['patient_id', 'phone_number'],
-    "PatientEmail.csv": ['patient_id', 'email'],
     "Staff.csv": ['staff_id', 'first_name', 'last_name', 'position', 'department'],
     "StaffPhone.csv": ['staff_id', 'phone_number'],
     "PatientMedicalConditions.csv": ['patient_id', 'medical_condition', 'description', 'diagnosis_date', 'diagnoser_id'],
     "PatientStaffCare.csv": ['staff_id', 'patient_id', 'staff_role_in_care', 'care_start_date', 'care_end_date'],
-    "Insurance.csv": ['policy_id', 'provider', 'street_no', 'street_name', 'unit_no', 'city', 'province', 'country', 'patient_id'],
-    "InsuranceCoverageDetails.csv": ['policy_id', 'coverage_details'],
+    "Insurance.csv": ['policy_id', 'provider', 'billing_address_id', 'patient_id'],  
+    "InsuranceCoverageDetails.csv": ['policy_id', 'coverage_details'],  
+    "BillingAddress.csv": ['billing_address_id', 'street_no', 'street_name', 'unit_no', 'city', 'state', 'country'],
     "MedsTreatCondition.csv": ['med_id', 'condition_name'],
     "MedSideEffects.csv": ['med_id', 'side_effect', 'severity'],
     "Allergy.csv": ['allergy_name', 'type', 'management_strategy', 'seasonal_considerations'],
@@ -136,12 +130,13 @@ csv_files = {
     "Visits.csv": ['visit_id', 'visitor_id', 'patient_id', 'date', 'notes'],
     "VisitorPhone.csv": ['visitor_id', 'phone_number'],
     "FoodAndNutrition.csv": ['food_name', 'type', 'calories', 'protein', 'fats'],
-    "MedAllergyConflict.csv": ['med_id', 'allergy_name', 'severity'],
-    "MedMedConflict.csv": ['med_A', 'med_B', 'severity'],
+    "MedAllergyConflict.csv": ['med_id', 'allergy_name', 'severity', 'conflict_check'],
+    "MedMedConflict.csv": ['med_A', 'med_B', 'severity', 'conflict_check'],
     "MealPlans.csv": ['meal_plan_id', 'schedule', 'patient_id'],
     "Meal.csv": ['meal_plan_id', 'meal_name', 'foodName1', 'foodName2',],
-    "FoodAllergyConflict.csv": ['food_name', 'allergy_name'],
-    "PatientMedication.csv": ['patient_id', 'med_id', 'dosage', 'admin_schedule', 'prescribing_doc_id']
+    "FoodAllergyConflict.csv": ['food_name', 'allergy_name', 'conflict_check'],
+    "PatientMedication.csv": ['patient_id', 'med_id', 'dosage', 'admin_schedule', 'prescribing_doc_id'],
+    "PatientAddress.csv": ['address_id', 'street_no', 'street_name', 'unit_no', 'city', 'state', 'country'],
 }
 
 # Open all files and their corresponding writers
@@ -156,36 +151,59 @@ try:
         writers[filename].writeheader()
 
     
-# Generate Patients
+# Generate Patients and their Addresses
     for _ in range(num_patients):
         # Generate unique ID for the patient
         patient_id = generate_unique_id()
-        
-        # Composite attributes
+        address_id = generate_unique_id()  # Unique AddressID for each patient
+
+        # Patient attributes
         first_name = fake.first_name().replace("'", "''")
         last_name = fake.last_name().replace("'", "''")
-        
-        # Simple attributes
         dob = fake.date_of_birth(minimum_age=50, maximum_age=100)
         height = fake.random_int(min=120, max=220)  # in cm
-        weight = fake.random_int(min=40, max=150)   # in kg
-        insurance = random.choice(['Y', 'N'])
+        weight = fake.random_int(min=40, max=150)  # in kg
+        insurance_check = True if random.random() < 0.8 else False 
         sex = random.choice(['M', 'F'])
-        dnr_present = 'Y' if random.random() < 0.8 else 'N'  # 80% chance of Y
+        dnr_present = False if random.random() < 0.8 else True  
 
-        if insurance == 'Y':
+        if insurance_check == True:
             patients_with_insurance.append(patient_id)
 
-        # Composite address attribute with Canada more likely than US
+        # Write Patient data
+        patient_writer = writers["Patients.csv"]
+        patient_writer.writerow({
+            "patient_id": patient_id,
+            "first_name": first_name,
+            "last_name": last_name,
+            "dob": dob,
+            "sex": sex,
+            "height": height,
+            "weight": weight,
+            "address_id": address_id,
+            "dnr": dnr_present,
+            "insurance_check": insurance_check
+        })
+
+        # Address attributes
         street_no = fake.building_number()
         street_name = fake.street_name().replace("'", "''")
         unit_no = fake.random_int(min=1, max=100)
         city = fake.city().replace("'", "''")
-        province = fake.state_abbr()
+        state = fake.state_abbr()
         country = 'Canada' if random.random() < 0.7 else 'US'  # 70% Canada, 30% US
-        
-        patient_writer = writers["Patients.csv"]
-        patient_writer.writerow({"patient_id": patient_id, "first_name": first_name, "last_name": last_name, 'dob': dob, 'sex': sex, 'height': height, 'weight': weight, 'insurance': insurance, 'dnr_present': dnr_present, 'street_no': street_no, 'street_name': street_name, 'unit_no': unit_no, 'city': city, 'province' : province, 'country': country })
+
+        # Write PatientAddress data
+        patient_address_writer = writers["PatientAddress.csv"]
+        patient_address_writer.writerow({
+            "address_id": address_id,
+            "street_no": street_no,
+            "street_name": street_name,
+            "unit_no": unit_no,
+            "city": city,
+            "state": state,
+            "country": country
+        })
 
         # Generate data for PatientPhones table
         for _ in range(random.randint(*num_phones_per_patient)):  # Each patient can have 1-3 phone numbers
@@ -193,14 +211,8 @@ try:
 
             patient_phone_writer=writers["PatientPhone.csv"]
             patient_phone_writer.writerow({'patient_id':patient_id, 'phone_number': phone_number})
+    print("Patient, Phone and Address tables filled")
         
-
-        # Generate data for PatientEmails table
-        for _ in range(random.randint(*num_emails_per_patient)):  # Each patient can have 1-2 emails
-            email = generate_unique_email()
-
-            patient_email_writer=writers["PatientEmail.csv"]
-            patient_email_writer.writerow({'patient_id':patient_id, 'email': email})
             
 # Generate Staff and only keep Doctor IDs for diagnoserID in PatientMedicalConditions
     for _ in range(num_staff):
@@ -221,6 +233,7 @@ try:
 
         staff_phone_writer=writers["StaffPhone.csv"]
         staff_phone_writer.writerow({'staff_id':staff_id, 'phone_number': phone_number})
+    print("Staff and Staffphone tables filled")
 
 # Generate Patient Medical Conditions, using only doctor IDs as diagnoserID
     for _ in range(num_patients // 2):  # Assign medical conditions to half of the patients
@@ -244,6 +257,7 @@ try:
             'diagnosis_date': diagnosis_date,
             'diagnoser_id': diagnoser_id
         })
+    print("PatientMedicalConditions table filled")
 
 # Generate PatientStaffCare
     for _ in range(num_patients * 2):  # Assign each patient to at least one staff member
@@ -259,27 +273,55 @@ try:
 
         patient_staff_care_writer=writers["PatientStaffCare.csv"]
         patient_staff_care_writer.writerow({'staff_id':staff_id, 'patient_id' :patient_id, 'staff_role_in_care':staff_role, 'care_start_date':care_start_date, 'care_end_date': care_end_date})
+    print("Staffcare tables filled")
 
 # Generate Insurance for patients with insurance
     for patient_id in patients_with_insurance:
-        policy_id = fake.unique.random_int(min=1000, max=9999)
+        # Generate unique IDs for policy and billing address
+        policy_id = generate_unique_id()
+
+        billing_address_id = generate_unique_id()
+
+        # Generate insurance provider and other details
         provider = random.choice(insurance_providers)
+
+        # Write Insurance record
+        insurance_writer = writers["Insurance.csv"]
+        insurance_writer.writerow({
+            'policy_id': policy_id,
+            'provider': provider,
+            'billing_address_id': billing_address_id,
+            'patient_id': patient_id
+        })
+
+        # Generate BillingAddress details
         street_no = fake.building_number()
         street_name = fake.street_name().replace("'", "''")
         unit_no = fake.random_int(min=1, max=100)
         city = fake.city().replace("'", "''")
-        province = fake.state_abbr()
+        state = fake.state_abbr()
         country = 'Canada' if random.random() < 0.7 else 'US'
 
-        insurance_writer=writers["Insurance.csv"]
-        insurance_writer.writerow({'policy_id':policy_id, 'provider':provider, 'street_no':street_no, 'street_name':street_no, 'unit_no': unit_no, 'city' :city, 'province' :provider, 'country' :country, 'patient_id' :patient_id})
+        # Write BillingAddress record
+        billing_address_writer = writers["BillingAddress.csv"]
+        billing_address_writer.writerow({
+            'billing_address_id': billing_address_id,
+            'street_no': street_no,
+            'street_name': street_name,
+            'unit_no': unit_no,
+            'city': city,
+            'state': state,
+            'country': country
+        })
 
-        # InsuranceCoverageDetails
+        # Generate coverage details for InsuranceCoverageDetails table
         coverage_details = fake.sentence().replace("'", "''")
-
-        insurance_coverage_details_writer=writers["InsuranceCoverageDetails.csv"]
-        insurance_coverage_details_writer.writerow({'policy_id':policy_id, 'coverage_details':coverage_details})
-    
+        insurance_coverage_details_writer = writers["InsuranceCoverageDetails.csv"]
+        insurance_coverage_details_writer.writerow({
+            'policy_id': policy_id,
+            'coverage_details': coverage_details
+        })
+    print("Insurance, Billing and Coverage tables filled")
     # Generate Medications and their single treatment
     for _ in range(num_medications):
         med_id = generate_unique_med_id()
@@ -305,6 +347,7 @@ try:
         # Write the single treated condition to MedsTreatCondition.csv
         treat_conditions_writer = writers["MedsTreatCondition.csv"]
         treat_conditions_writer.writerow({'med_id': med_id, 'condition_name': treated_condition})
+    print("Meds and treatment tables filled")
 
 # Generate Medication Side Effects
     for med_id in med_ids:
@@ -314,6 +357,7 @@ try:
 
             med_side_effects_write=writers["MedSideEffects.csv"]
             med_side_effects_write.writerow({'med_id':med_id, 'side_effect':side_effect, 'severity':severity})
+    print("Meds Side effects tables filled")
 
 # Generate Allergies, Allergy Symptoms, and Allergy Treatments
     for allergy_name in allergy_names:
@@ -369,6 +413,7 @@ try:
                 'severity': severity,
                 'description': description
             })
+    print("Allergy tables filled")
 
 # Generate Visitor
     for _ in range(num_visitors):
@@ -378,7 +423,7 @@ try:
 
         visitor_write=writers["visitor.csv"]
         visitor_write.writerow({'visitor_id':visitor_id, 'first_name':first_name, 'last_name':last_name})
-
+    print("visitor tables filled")
 # Generate Visits
     for _ in range(num_visitors):
         visit_id = fake.unique.random_int(min=1000, max=9999)
@@ -389,6 +434,7 @@ try:
 
         visits_write=writers["Visits.csv"]
         visits_write.writerow({'visit_id':visit_id, 'visitor_id':visitor_id, 'patient_id':patient_id, 'date':date, 'notes':notes})
+    print("visits tables filled")
 
 # Generate VisitorPhone
     for visitor_id in visitor_ids:
@@ -396,6 +442,7 @@ try:
 
         visitor_phone_writer=writers["VisitorPhone.csv"]
         visitor_phone_writer.writerow({'visitor_id':visitor_id, 'phone_number':phone_number})
+    print("visitor phone tables filled")
 
  # Generate Foods and Nutritional Values
     for _ in range(num_food_items):
@@ -407,15 +454,19 @@ try:
 
         food_nutrition_writer=writers["FoodAndNutrition.csv"]
         food_nutrition_writer.writerow({'food_name':food_name, 'type':type, 'calories':calories, 'protein':protein, 'fats':fats})
+    print("food tables filled")
 
 # Generate MedAllergyConflict (conflicts between medications and allergies)
     for _ in range(num_medications // 2):
         med_id = random.choice(med_ids)
         allergy_name = random.choice(allergy_names)
         severity = random.choice(["Low", "Medium", "High"])
+        conflict_check = True  # Boolean indicating conflict exists
+        
         
         med_allergy_conflict_writer=writers["MedAllergyConflict.csv"]
-        med_allergy_conflict_writer.writerow({'med_id':med_id, 'allergy_name':allergy_name, 'severity':severity})
+        med_allergy_conflict_writer.writerow({'med_id':med_id, 'allergy_name':allergy_name, 'severity':severity, 'conflict_check': conflict_check})
+    print("medallergyconflict tables filled")
 
 
 # Medication Conflicts
@@ -426,22 +477,27 @@ try:
         while med_b == med_a:
             med_b = random.choice(med_ids_list)  # Ensure unique pairs
         med_med_conflicts.append((med_a, med_b))
+        conflict_check = True  # Boolean indicating conflict exist
 
         med_med_conflict_writer = writers["MedMedConflict.csv"]
-        med_med_conflict_writer.writerow({'med_A': med_a, 'med_B': med_b, 'severity': random.choice(["Low", "Medium", "High"])})
+        med_med_conflict_writer.writerow({'med_A': med_a, 'med_B': med_b, 'severity': random.choice(["Low", "Medium", "High"] ),'conflict_check': conflict_check})
+    print("medmedconflict tables filled")
 
 
 ## Generate FoodAllergyConflict
     for _ in range(num_food_items * 2):  # Randomly create conflicts for some food items
         food_name = random.choice(food_names)
         allergy_name = random.choice(allergy_names)
+        conflict_check = True  # Boolean indicating conflict exist
 
         # Write the conflict to the CSV file
         food_allergy_conflict_writer = writers["FoodAllergyConflict.csv"]
         food_allergy_conflict_writer.writerow({
             'food_name': food_name,
             'allergy_name': allergy_name,
+            'conflict_check': conflict_check
     })
+    print("foodallergy tables filled")
 
 # Generate Meal Plans for every patient
     for patient_id in patient_ids:  # Ensure every patient gets a meal plan
@@ -461,6 +517,7 @@ try:
             'meal_plan_id': meal_plan_id,
             'patient_id': patient_id
         })
+    print("mealplan tables filled")
 
 # Generate Meals for each meal plan
     for meal_plan in meal_plans_data:  # Iterate over the list of meal plan dictionaries
@@ -504,7 +561,7 @@ try:
                 'foodName1': food1,
                 'foodName2': food2,
             })
-
+    print("meal tables filled")
 # Generate PatientMedication
     for patient_id, conditions in patient_conditions.items():
         assigned_medications = set()  # Track medications already assigned to this patient
@@ -553,6 +610,7 @@ try:
 
                 # Track assigned medication
                 assigned_medications.add(medication)
+    print("Patient medication tables filled")
 
 finally:
     # Ensure all file handles are closed
