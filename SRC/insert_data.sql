@@ -1,5 +1,7 @@
 -- Patients Table
 
+--ignore this file, of no use
+
         INSERT INTO Patients (patient_id, first_name, last_name, dob, sex, height, weight, insurance, dnr_present, street_no, street_name, unit_no, city, province, country)
         VALUES ('1946382308', 'Gerald', 'Guzman', '1952-10-14','M', 166, 84, 'Y', 'Y', '4476', 'Macias Road', 17, 'West Frankburgh', 'CA', 'Canada');
         

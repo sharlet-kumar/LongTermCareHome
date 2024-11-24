@@ -1,0 +1,51 @@
+patient_id,first_name,last_name,dob,sex,height,weight,insurance,dnr_present,street_no,street_name,unit_no,city,province,country
+6063167320,Mike,Scott,1953-05-18,M,205,117,Y,Y,46313,Meadows Burg,76,Sharonside,UT,Canada
+5506324355,Melissa,Beard,1968-11-29,F,183,114,Y,Y,2889,Rachel Fields,58,North Jasonberg,GU,Canada
+2649214782,Alyssa,Sparks,1939-01-03,M,156,131,N,Y,90068,Cruz Spurs,69,Tonyberg,NY,US
+9694068220,Joseph,Thomas,1943-09-12,F,159,52,Y,Y,2596,Morales Mountain,45,Davidmouth,SD,US
+5863968055,Jessica,Hickman,1971-09-26,M,194,146,Y,Y,9013,Patricia Road,83,New Robert,SC,Canada
+8960899052,Anthony,Hopkins,1973-08-05,M,180,105,Y,Y,365,Debra Forest,35,Darrenfort,WA,Canada
+0855655016,Audrey,Holmes,1972-04-07,M,202,110,Y,N,77489,Dickerson Shoal,33,Lake Kellymouth,DC,Canada
+3712376485,Christopher,Cook,1937-01-01,F,125,149,N,Y,203,Todd Shoal,63,East Sarah,VI,Canada
+2552972996,Kenneth,Morgan,1925-06-04,M,205,139,N,Y,7500,Phillip Plain,88,New Brandonville,OR,Canada
+8759820652,Kelly,Mccormick,1964-10-26,M,131,55,N,Y,486,Jeffrey Bridge,61,Johnsonburgh,MT,Canada
+9084222294,Joseph,Dickson,1941-05-14,M,207,42,N,Y,6838,Rubio Ridges,55,Lindastad,TN,Canada
+3492132392,Rita,Jackson,1925-06-22,M,172,136,N,Y,935,Norman Squares,72,Derekton,FM,Canada
+0360026548,Ariana,Brown,1957-08-02,M,130,111,Y,Y,48996,Thomas Green,23,North Brianaborough,AS,Canada
+7424026363,Jason,Gonzalez,1964-03-29,F,124,65,Y,Y,779,Kayla Common,8,Anthonyland,PW,Canada
+9100656003,Mark,Green,1932-04-20,M,184,121,Y,Y,1348,Gonzales Throughway,37,Pattersonborough,LA,US
+8400691482,Troy,Mccarty,1933-04-29,M,120,56,N,Y,390,Tyrone Club,16,New Kylemouth,NY,US
+3304186552,Natalie,Brown,1945-12-18,M,160,79,Y,Y,03819,Sarah Divide,4,Lake Johnton,FM,US
+6853119416,Marie,Braun,1951-01-25,F,190,81,Y,Y,722,Murphy Lakes,1,Williamsfurt,AK,Canada
+3641048591,Lynn,Preston,1942-06-15,M,136,105,Y,Y,59827,Courtney Divide,40,Lake Kevin,TX,Canada
+1662389641,Samantha,Robbins,1956-06-30,M,134,64,Y,Y,062,Meghan Ridge,81,Grayshire,CA,Canada
+4392770979,Philip,Rodriguez,1973-03-01,M,151,65,N,Y,13683,Cooley Run,11,North Robert,WY,US
+3354651965,Ryan,Harrington,1959-11-30,F,141,143,N,Y,542,Smith Courts,75,South Troy,UT,Canada
+7846879816,Rebecca,Thornton,1932-08-09,M,164,149,Y,Y,10061,Wallace Route,81,Williamfort,CA,US
+6826903626,Rodney,Watkins,1966-11-19,M,177,100,Y,Y,595,Craig Springs,98,South Kelly,MS,US
+6900902451,Danielle,Hernandez,1945-02-16,F,125,90,Y,N,50543,Taylor Lake,99,Kingmouth,CT,Canada
+5442408301,Haley,Blackwell,1923-11-29,F,153,139,Y,Y,35026,Shannon Harbors,53,Louisburgh,UT,Canada
+3615736965,James,Alvarez,1925-09-12,F,155,106,N,Y,181,Moore Trail,36,North Kathleenberg,PA,Canada
+6635958458,Barry,Bailey,1954-12-09,F,147,93,N,N,02726,Brian Course,41,East Haleybury,MT,Canada
+0228703886,Jim,Hughes,1935-11-23,M,130,88,Y,Y,40335,Megan Estates,43,Jasonport,IA,Canada
+8154938267,Joseph,Medina,1927-01-28,M,160,67,Y,Y,871,Burton Crossing,43,East Brandonbury,AS,Canada
+6034131466,Angela,Tapia,1969-10-13,F,156,91,N,Y,548,Emily Ville,66,South Micheleview,VT,Canada
+3653372300,Nathan,Young,1950-12-12,M,209,116,N,Y,50837,Jonathan Islands,23,Melissaton,MO,Canada
+7408701855,Catherine,Jacobson,1941-10-21,M,206,89,N,Y,09838,Gomez Fields,63,Sweeneybury,WI,Canada
+9371180943,Paula,Brown,1948-05-17,M,187,56,Y,N,869,Torres Crest,78,Johnsonview,GA,Canada
+9005302310,William,Jones,1929-03-18,M,128,81,N,Y,62854,Hopkins Plains,86,South Craigburgh,NC,US
+4153265317,Austin,Crawford,1971-05-18,F,130,55,Y,Y,56213,Allen Path,77,Taylormouth,AS,Canada
+0905162782,Amy,Pearson,1956-06-21,F,138,82,Y,Y,3544,Robert Mountains,3,Lake Anthonystad,SD,Canada
+2530767248,Arthur,Kaiser,1932-08-24,M,170,140,N,Y,886,Mccormick Knoll,61,Jayside,WY,US
+7333527183,Sara,Roberts,1941-06-17,M,204,53,Y,N,047,Savage Springs,59,Bonniefort,IN,Canada
+8711843082,Michael,Powell,1970-06-04,M,130,93,Y,Y,338,Joshua Parks,66,North Angela,MT,Canada
+0456953647,John,Bishop,1926-09-02,M,154,68,Y,Y,7096,Edwards Square,59,Hollandborough,ID,Canada
+7285210275,Shannon,Gonzalez,1944-03-29,M,185,86,N,Y,6198,Shah Rest,55,Potterburgh,CT,Canada
+0725667752,Eric,Ellis,1926-05-03,F,147,103,N,Y,066,Linda Avenue,76,New William,GU,Canada
+7145857358,Thomas,Johnson,1951-01-19,M,196,148,Y,Y,1701,Christine Place,90,Whiteberg,IA,Canada
+6165917719,Glenn,Harris,1948-04-07,F,138,56,Y,Y,652,Hammond Canyon,46,Jonathanfort,IN,Canada
+1820269067,Don,Vaughn,1961-03-13,M,121,115,N,Y,943,White Heights,51,North Shannon,AZ,Canada
+2226504018,Ryan,Perez,1954-03-04,F,144,126,N,Y,73934,Ortiz Fort,19,East Kristin,WY,Canada
+0029639335,Jennifer,Lewis,1964-12-03,F,166,103,N,Y,49197,Ann Ranch,22,Turnerland,VA,Canada
+8333545648,Nancy,Bell,1974-03-03,M,191,64,N,N,054,Hill Cliffs,54,Sabrinafurt,ID,US
+7444995836,Robin,Bradley,1962-11-16,M,171,78,Y,Y,06914,Davis Fork,78,New Rebecca,IN,Canada
