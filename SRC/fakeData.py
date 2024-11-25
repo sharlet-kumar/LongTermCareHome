@@ -8,9 +8,9 @@ fake = Faker()
 # Define counts for primary entities
 num_patients = 4000
 num_medications = 1000
-num_visitors = 800
+num_visitors = 500
 num_staff = 2500
-num_food_items = 200
+num_food_items = 100
 
 # Multi-value counts
 num_phones_per_patient = (1, 3)
@@ -268,7 +268,7 @@ try:
 
     print("Staff and Staffphone tables filled")
 
-    # Generate Patient Medical Conditions, using only doctor IDs as diagnoserID
+# Generate Patient Medical Conditions, using only doctor IDs as diagnoserID
     for _ in range(num_patients // 2):
         patient_id = random.choice(patient_ids)
         diagnoser_id = random.choice(doctor_ids)
@@ -279,12 +279,17 @@ try:
         # Ensure the patient doesn't already have this condition
         if patient_id not in assigned_conditions:
             assigned_conditions[patient_id] = set()
-        
+
         while condition in assigned_conditions[patient_id]:
             condition = random.choice(health_conditions)  # Pick a new condition until it's unique for the patient
 
         # Add the condition to the patient's set of assigned conditions
         assigned_conditions[patient_id].add(condition)
+
+        if patient_id not in patient_conditions:
+            patient_conditions[patient_id] = []
+        
+        patient_conditions[patient_id].append(condition)
 
         # Write to the CSV file
         patient_medical_conditions_writer = writers["PatientMedicalConditions.csv"]
@@ -297,6 +302,7 @@ try:
         })
 
     print("PatientMedicalConditions table filled")
+
 
 # Generate PatientStaffCare data
     for _ in range(num_patients * 2):  # Assign each patient to at least one staff member
@@ -329,8 +335,6 @@ try:
         })
 
     print("Staff care tables filled")
-
-
 
 # Generate Insurance for patients with insurance
     for patient_id in patients_with_insurance:
@@ -560,7 +564,7 @@ try:
 
         food_nutrition_writer=writers["FoodAndNutrition.csv"]
         food_nutrition_writer.writerow({'foodname':food_name, 
-                                        'foodgroup':type, 
+                                        'foodgroup':food_type, 
                                         'calories':calories,
                                         'protein':protein, 
                                         'fats':fats})
@@ -679,31 +683,23 @@ try:
             )
         ]
 
-        if not valid_food_pairs:
-            print(f"No valid food pairs for PlanID={meal_plan_id}, PatientID={patient_id}.")
-            continue
-
         assigned_foods = set()  # Reset for each meal plan
 
-        for _ in range(random.randint(1, 3)):  # Each plan can have 1-3 meals
-            if not valid_food_pairs:
-                print(f"Exhausted valid food pairs for PlanID={meal_plan_id}.")
-                break
+        # Randomly pick a valid food pair
+        food1, food2 = random.choice(valid_food_pairs)
+        valid_food_pairs.remove((food1, food2))  # Remove the chosen pair to avoid reuse
+        assigned_foods.update([food1, food2])
 
-            # Randomly pick a valid food pair
-            food1, food2 = random.choice(valid_food_pairs)
-            valid_food_pairs.remove((food1, food2))  # Remove the chosen pair to avoid reuse
-            assigned_foods.update([food1, food2])
-
-            # Write meal data to Meal.csv
-            meal_writer = writers["Meal.csv"]
-            meal_writer.writerow({
-                'MealPlanID': meal_plan_id,
-                'mealName': fake.word().capitalize(),
-                'foodName1': food1,
-                'foodName2': food2,
-            })
+        # Write meal data to Meal.csv
+        meal_writer = writers["Meal.csv"]
+        meal_writer.writerow({
+            'MealPlanID': meal_plan_id,
+            'mealName': fake.word().capitalize(),
+            'foodName1': food1,
+            'foodName2': food2,
+        })
     print("meal tables filled")
+
 # Generate PatientMedication
     for patient_id, conditions in patient_conditions.items():
         assigned_medications = set()  # Track medications already assigned to this patient
@@ -721,18 +717,14 @@ try:
                 # Check for allergy conflicts
                 patient_allergies = patient_allergy_map.get(patient_id, [])
                 med_allergies = medication_allergy_map.get(med_id, [])
-                if any(allergy in med_allergies for allergy in patient_allergies):
-                    continue  # Skip this medication due to allergy conflict
 
                 # Check for medication conflicts
                 conflicting_meds = [
                     med_b for med_a, med_b in med_med_conflicts if med_a == med_id or med_b == med_id
                 ]
-                if any(assigned_med in assigned_medications for assigned_med in conflicting_meds):
-                    continue  # Skip this medication due to medication conflict
-
                 # Add to suitable medications if no conflicts
                 suitable_meds.append(med_id)
+
 
             # Assign a suitable medication if available
             if suitable_meds:
@@ -741,17 +733,24 @@ try:
                 dosage = random.randint(1, 3) * 10  # e.g., 10mg, 20mg, 30mg
                 admin_schedule = random.choice(["Morning", "Evening", "Twice a Day"])
 
-                patient_medication_writer = writers["PatientMedication.csv"]
-                patient_medication_writer.writerow({
-                    'PatientID': patient_id,
-                    'medID': medication,
-                    'dosage': dosage,
-                    'AdminSchedule': admin_schedule,
-                    'prescribingDocID': prescribing_doc
-                })
+                # Write to CSV
+                try:
+                    patient_medication_writer = writers["PatientMedication.csv"]
+                    patient_medication_writer.writerow({
+                        'PatientID': patient_id,
+                        'medID': medication,
+                        'dosage': dosage,
+                        'AdminSchedule': admin_schedule,
+                        'prescribingDocID': prescribing_doc
+                    })
 
-                # Track assigned medication
-                assigned_medications.add(medication)
+                    # Track assigned medication
+                    assigned_medications.add(medication)
+                except Exception as e:
+                    print(f"Error writing to PatientMedication.csv: {e}")
+            else:
+                print(f"No suitable medications available for Condition {condition}.")
+
     print("Patient medication tables filled")
 
 finally:
