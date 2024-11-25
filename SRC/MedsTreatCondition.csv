@@ -1,0 +1,1001 @@
+medId,conditionName
+09214914,Obesity
+66025632,Cancer
+47834146,Hearing loss
+90393040,Arthritis
+14273636,Arthritis
+00682442,Diabetes
+56817459,Migraine
+26871430,Migraine
+39832859,Stroke
+60476272,Stroke
+18983471,Gout
+97839192,Diabetes
+83531673,Stroke
+40435380,Gout
+61420274,Stroke
+03575902,High Cholesterol
+35204030,Gout
+57341112,Stroke
+37391745,Gout
+48097822,Dementia
+72766673,Arthritis
+12474966,Heart Failure
+39085743,Alzheimers
+19442738,Dementia
+94236203,Diabetes
+48497937,Obesity
+11694484,Cataracts
+88257377,Cataracts
+68689566,Dementia
+11164115,Anemia
+86932385,Alzheimers
+30420115,Cataracts
+67416509,Hearing loss
+78479628,Gout
+11574939,Epilepsy
+19478851,Asthma
+46940771,Epilepsy
+05418226,Stroke
+68326643,Alzheimers
+83631967,Delirium
+92329570,Depression
+17470093,Migraine
+79686921,Delirium
+70976049,Gout
+49752985,Hearing loss
+21332994,Depression
+70491304,Cataracts
+81298663,Heart Disease
+93882352,Diabetes
+38938106,Allergies
+20307596,Hypertension
+88197529,Epilepsy
+18917172,Obesity
+12193849,Alzheimers
+66567504,Heart Disease
+24653326,Gout
+62267307,Cancer
+29054315,Arthritis
+61251393,Osteoporosis
+19880627,Hearing loss
+54943437,Cancer
+31930336,Diabetes
+58306394,Epilepsy
+13368097,Heart Failure
+52018946,Gout
+03874712,High Cholesterol
+69361114,Stroke
+27502271,Alzheimers
+15427281,Dementia
+22627701,Allergies
+68189303,Migraine
+51837657,Heart Disease
+75114255,Cancer
+94699296,Epilepsy
+25277670,Allergies
+66080784,Migraine
+87616770,Heart Disease
+38518654,High Cholesterol
+44687688,Cancer
+91308151,Migraine
+89370103,Heart Disease
+23157159,Cataracts
+48630283,Arthritis
+99351208,Heart Disease
+33423024,Allergies
+11653047,Epilepsy
+79355588,Allergies
+20468028,Hypertension
+13968259,Heart Failure
+42122155,Cataracts
+77987540,Allergies
+92936447,Diabetes
+25355041,Obesity
+74283676,Hypertension
+01160475,Migraine
+27825526,Obesity
+45764516,Gout
+34363263,Alzheimers
+66688950,Hypertension
+24787477,Depression
+61995874,Arthritis
+52477162,Obesity
+26166309,Gout
+83251729,Hearing loss
+46573733,Hearing loss
+27511612,Cancer
+57741650,Hypertension
+26335647,Depression
+91019695,Allergies
+56920765,Cataracts
+95489760,Hearing loss
+35713586,Depression
+61926320,Stroke
+42004342,Cancer
+27156880,Osteoporosis
+79557605,Depression
+27608525,Heart Failure
+91807044,Asthma
+91811215,Depression
+49480592,Hypertension
+44530615,Heart Failure
+71240315,Asthma
+37862989,Hearing loss
+15025625,Arthritis
+54331287,Asthma
+48624488,Migraine
+61656630,Osteoporosis
+40079456,Delirium
+48858469,Depression
+94547788,Cancer
+30568135,Migraine
+82572359,Anemia
+25606554,High Cholesterol
+46514584,Hypertension
+73023334,Delirium
+23902871,Alzheimers
+70808253,Allergies
+08616975,Arthritis
+40094353,Dementia
+40780511,Cataracts
+41573922,Dementia
+29782379,High Cholesterol
+79909278,High Cholesterol
+32249845,Cancer
+35706814,Hearing loss
+79967695,Diabetes
+10678423,Asthma
+27728808,Heart Disease
+05514279,Heart Disease
+45192667,Osteoporosis
+94017290,Anemia
+63005594,Hearing loss
+35511528,Arthritis
+75250339,Dementia
+13088167,Gout
+81934597,Hypertension
+11104889,Alzheimers
+74229870,Hypertension
+56123826,Hearing loss
+18839350,Obesity
+60314071,Obesity
+15329615,Cancer
+75140081,Arthritis
+06417665,Delirium
+64076550,Alzheimers
+56675706,Migraine
+00763584,Asthma
+87066326,Arthritis
+58588672,Heart Failure
+25755812,Heart Failure
+06360184,Cancer
+44807044,Gout
+41802092,Cataracts
+69345617,Delirium
+94653908,Obesity
+19567643,Stroke
+90934667,Allergies
+61729141,Gout
+95104377,Asthma
+42173892,Asthma
+23727228,Hypertension
+84105820,Asthma
+32439342,Arthritis
+36238773,Delirium
+59632863,Heart Failure
+56300521,Delirium
+52518608,Cancer
+55356154,Osteoporosis
+94946765,Cataracts
+41745475,High Cholesterol
+29030202,Osteoporosis
+26474438,Arthritis
+96340828,Dementia
+53876076,Allergies
+52865371,Heart Failure
+55960668,Obesity
+94680282,Diabetes
+58808744,Gout
+04576968,Hypertension
+47054141,Gout
+39459525,Alzheimers
+18759604,Allergies
+99362243,Obesity
+66869908,Cancer
+00275799,Epilepsy
+89901861,Alzheimers
+22847718,Osteoporosis
+57446816,Hypertension
+06892094,Anemia
+22539651,Cataracts
+76941494,Arthritis
+94982116,Dementia
+78494308,High Cholesterol
+59679227,Diabetes
+71100102,Alzheimers
+85599111,Asthma
+46303757,High Cholesterol
+08286924,Heart Disease
+77075155,Arthritis
+42085315,Alzheimers
+86829685,Anemia
+68120585,Heart Failure
+15987752,Allergies
+96174021,Hearing loss
+40678700,Hearing loss
+98126844,Osteoporosis
+93781967,Epilepsy
+03515156,Obesity
+66370351,Cancer
+06554162,Diabetes
+89991822,Epilepsy
+49902495,High Cholesterol
+19822172,Allergies
+41081277,Alzheimers
+63087056,Alzheimers
+21264636,Stroke
+79308866,Dementia
+27196767,Alzheimers
+43050747,Diabetes
+16030443,Dementia
+30366468,Diabetes
+64510612,Cancer
+29262957,Arthritis
+67692969,Epilepsy
+72503204,Heart Disease
+77954692,Migraine
+07884281,Alzheimers
+95495621,Asthma
+81085911,Arthritis
+93872132,Heart Failure
+99805763,Migraine
+90626499,Anemia
+50485995,Cataracts
+19071073,Hearing loss
+46324232,Stroke
+27153718,Heart Disease
+37579585,Stroke
+32243853,Arthritis
+67367102,High Cholesterol
+52764791,Dementia
+98234904,Obesity
+55150346,Heart Failure
+07459174,Cancer
+81872743,Alzheimers
+98454320,Epilepsy
+88776403,Hearing loss
+65584718,Cataracts
+78466428,Osteoporosis
+89788201,Stroke
+77988771,High Cholesterol
+32376225,Obesity
+03736614,Asthma
+99292201,Asthma
+37165834,Gout
+28606343,Alzheimers
+21482962,Anemia
+61798493,Asthma
+46950761,Hearing loss
+50867471,Gout
+71168298,Dementia
+99922311,Obesity
+94963290,Delirium
+10937946,Depression
+77454176,Osteoporosis
+83358773,High Cholesterol
+03002724,Cancer
+81417728,Delirium
+47959227,Hearing loss
+82000442,Hearing loss
+78351196,Anemia
+65232378,High Cholesterol
+60700406,Migraine
+25131659,Asthma
+47218972,Obesity
+80214475,Hearing loss
+37015817,Dementia
+49071388,Stroke
+98638055,Delirium
+32618754,Cataracts
+41364049,Hearing loss
+76971380,Migraine
+22941679,Obesity
+62581237,Asthma
+86924554,Delirium
+41214248,Obesity
+06558706,Heart Disease
+78921986,Arthritis
+57614575,Anemia
+41813955,Epilepsy
+88789781,Anemia
+24726823,Depression
+27729012,High Cholesterol
+53340149,Obesity
+03464293,Stroke
+03798916,Asthma
+77985558,Hearing loss
+33602535,Delirium
+51444861,Arthritis
+90384573,Hearing loss
+33997015,Dementia
+01647094,Hypertension
+68055578,Cataracts
+65903755,High Cholesterol
+76778170,Hypertension
+34626413,Stroke
+26424165,Diabetes
+92204469,Arthritis
+76733779,Hypertension
+21362224,Stroke
+27595401,Dementia
+87295987,Anemia
+66344029,Delirium
+08348347,Alzheimers
+30840103,Heart Failure
+18113911,High Cholesterol
+21085955,Obesity
+83617943,High Cholesterol
+05003234,Allergies
+45980312,Allergies
+33795239,Obesity
+52372142,Gout
+57164499,Osteoporosis
+50373881,Anemia
+21410691,Epilepsy
+30856635,Cataracts
+03765804,Migraine
+25967665,Stroke
+67915642,Migraine
+16256411,Diabetes
+52224013,Gout
+35249775,Asthma
+08423923,Migraine
+52078224,Alzheimers
+92436019,Diabetes
+39701605,Depression
+47343883,Osteoporosis
+62066090,Cancer
+32994311,Delirium
+92425522,Alzheimers
+22429865,Hearing loss
+19000147,Gout
+35937492,Diabetes
+34386394,Hearing loss
+56193786,Dementia
+83203867,Obesity
+27334059,Cancer
+01015756,Gout
+25315416,Alzheimers
+85945837,Alzheimers
+03309642,Cancer
+04863223,Hearing loss
+68829690,Osteoporosis
+75197256,Depression
+89425885,Diabetes
+42915342,Delirium
+32632831,Anemia
+22060858,Heart Disease
+05228161,Cancer
+73065279,Diabetes
+66535827,Depression
+36130009,Heart Disease
+98189151,Heart Disease
+04542443,High Cholesterol
+24363015,Dementia
+58411587,Arthritis
+06588800,Heart Disease
+47697988,Depression
+74062613,Allergies
+73286698,Allergies
+59943644,Gout
+37180623,Cataracts
+03960654,Hearing loss
+44245649,Osteoporosis
+18977454,Depression
+91537516,Epilepsy
+08598991,Asthma
+69390642,High Cholesterol
+93056453,Hearing loss
+16586047,Allergies
+83702953,Stroke
+64007753,Anemia
+61306730,Allergies
+02330393,Gout
+58517177,Dementia
+53185197,Heart Failure
+14666681,Cancer
+65261734,Depression
+05263079,Dementia
+33005424,Migraine
+65578301,Hearing loss
+75207884,Alzheimers
+09168703,Allergies
+19553471,Alzheimers
+54759267,Hypertension
+25282670,Epilepsy
+97003866,Migraine
+94478997,Depression
+30995299,Osteoporosis
+11491063,Heart Disease
+96007286,Allergies
+41338522,Cancer
+12107020,Heart Failure
+07241909,Epilepsy
+27270393,Arthritis
+70547073,Obesity
+01806714,Alzheimers
+06834325,Hearing loss
+12848259,Arthritis
+55811191,Cancer
+30150925,Epilepsy
+30989246,Osteoporosis
+68670285,Migraine
+51992054,Heart Failure
+00155533,Gout
+71994571,Cataracts
+01038638,Osteoporosis
+76849427,Anemia
+26150253,Dementia
+21073422,Cancer
+87328194,Delirium
+12791909,Delirium
+44121167,Osteoporosis
+74557855,Anemia
+31218449,Cataracts
+40835110,Epilepsy
+69839208,Heart Failure
+74433062,Dementia
+95238747,Heart Disease
+51653966,Heart Failure
+63095560,Allergies
+01407342,Anemia
+39785558,Hypertension
+34848594,Cataracts
+79598067,Arthritis
+54250097,Heart Disease
+07127238,Hearing loss
+63896224,Cataracts
+84460383,Gout
+75120427,Stroke
+95853040,Hypertension
+04854021,High Cholesterol
+72327410,Depression
+70342886,Allergies
+70453236,Migraine
+12791553,Obesity
+12002549,Delirium
+56785770,Hypertension
+30177130,Diabetes
+46972453,Depression
+72938656,Stroke
+93233902,Heart Failure
+12663431,Arthritis
+38484886,Obesity
+06061613,Heart Failure
+99925610,Gout
+67551442,Heart Disease
+38823352,Hearing loss
+75360860,Diabetes
+36411337,Stroke
+21291911,Gout
+50532568,Obesity
+10844403,Gout
+58319381,Arthritis
+42618978,Alzheimers
+96608269,Heart Disease
+40681332,High Cholesterol
+43903114,Depression
+28679474,Asthma
+39088831,Stroke
+29262963,Depression
+02151149,Alzheimers
+85142761,Allergies
+66835282,Osteoporosis
+15757992,Arthritis
+40715037,Delirium
+99867588,High Cholesterol
+56179482,Allergies
+49115303,High Cholesterol
+46192141,Allergies
+60638301,High Cholesterol
+27679917,Dementia
+89245594,Anemia
+50348695,Anemia
+79450178,Asthma
+43094517,Cancer
+51384034,Heart Failure
+69328279,Anemia
+39369947,Delirium
+20608488,Hearing loss
+02582045,Epilepsy
+59902668,Osteoporosis
+24766163,Delirium
+73046816,Epilepsy
+94453190,Stroke
+09170955,Epilepsy
+22936770,Anemia
+42672356,Dementia
+20102740,Osteoporosis
+94332832,Stroke
+52255783,Epilepsy
+78806766,Depression
+97528980,Dementia
+28388682,Allergies
+27985229,Diabetes
+31729924,Diabetes
+37386671,Cancer
+94394742,Heart Disease
+43815613,Migraine
+14465149,Allergies
+50699708,Heart Disease
+73970640,Heart Failure
+55557224,Allergies
+00047341,Depression
+85129579,Hypertension
+87303186,Alzheimers
+91965275,High Cholesterol
+79933112,Stroke
+95037963,Cancer
+88992173,Osteoporosis
+87720538,Hearing loss
+66200337,Gout
+03554309,Heart Disease
+18125946,High Cholesterol
+44805115,Gout
+62997681,Alzheimers
+13144049,Depression
+19771082,Asthma
+24303788,Migraine
+33560964,Diabetes
+99408587,Depression
+76209384,Depression
+14437650,Migraine
+46519512,Diabetes
+96308634,Diabetes
+67204709,Alzheimers
+17238526,Cataracts
+85791208,High Cholesterol
+09934414,Obesity
+94485316,Epilepsy
+60648684,Hypertension
+15997585,Alzheimers
+89373181,Cancer
+36022224,Heart Disease
+50567661,Migraine
+38755551,Arthritis
+25866704,Depression
+71699779,Alzheimers
+29185470,Heart Failure
+41232415,Obesity
+86607075,Hearing loss
+60717275,Obesity
+62874965,Heart Disease
+70234751,Depression
+61533911,Hypertension
+18744309,Hearing loss
+29340410,Anemia
+62042125,Dementia
+01413443,Hypertension
+18627667,Allergies
+08728450,Gout
+88685411,Obesity
+98563707,Asthma
+53373600,Heart Disease
+24680565,High Cholesterol
+38545190,Delirium
+50609538,Migraine
+10221526,Asthma
+09330122,Hearing loss
+53918062,Cancer
+98459906,Dementia
+22824841,Obesity
+11207427,Heart Failure
+49172659,Stroke
+53019503,Hypertension
+79211051,Gout
+40038110,Migraine
+11996153,Heart Failure
+07008760,Stroke
+11263624,Cancer
+56714750,Hearing loss
+72889176,Asthma
+38144769,Alzheimers
+74876955,Delirium
+89128051,Gout
+62057567,Obesity
+71008650,Anemia
+76443740,Delirium
+83761444,Hypertension
+91032818,Heart Failure
+60241288,Anemia
+70839443,Heart Failure
+93977077,Allergies
+08925444,Heart Failure
+38727494,Heart Failure
+95055327,Migraine
+08445637,Cancer
+92215972,Alzheimers
+87705810,Arthritis
+84767909,Cancer
+16988187,Osteoporosis
+23075310,Dementia
+81308528,Depression
+81755884,Migraine
+92105967,Stroke
+20258085,Hypertension
+46829479,Anemia
+30951531,Asthma
+69818398,Asthma
+89611863,Delirium
+31891188,Allergies
+61272309,Osteoporosis
+33571059,Delirium
+64872601,Gout
+21931739,Osteoporosis
+83257591,Cancer
+07921300,Alzheimers
+35995176,Stroke
+89293712,High Cholesterol
+44838151,Diabetes
+84314606,Hearing loss
+31268090,Osteoporosis
+81988913,Depression
+90894116,Heart Disease
+11544593,Heart Failure
+79235057,Osteoporosis
+00067019,Alzheimers
+94165754,Depression
+01631172,Depression
+81348427,Diabetes
+68987521,Diabetes
+90801271,Diabetes
+65828702,Cancer
+99209217,Delirium
+85904143,Hearing loss
+81119747,Delirium
+11474720,Arthritis
+18759127,Anemia
+78255002,High Cholesterol
+19403108,Hypertension
+82472167,Hearing loss
+36121678,Migraine
+91252256,Gout
+38198800,Depression
+72637587,Heart Failure
+65605897,Obesity
+49430734,Obesity
+80756720,Anemia
+70528152,Diabetes
+41604104,Delirium
+79639987,Stroke
+16269372,Dementia
+67027323,Anemia
+93868329,Alzheimers
+13927051,Asthma
+62789219,Obesity
+01582645,Cancer
+29770844,Hypertension
+71351563,Cancer
+73977768,Alzheimers
+53888053,Asthma
+50898625,Asthma
+02225913,Obesity
+28761169,Osteoporosis
+09057937,Cancer
+17303055,Obesity
+04039772,Heart Disease
+24963463,Cataracts
+58794670,Depression
+80315251,Cancer
+31425311,Delirium
+89327445,Alzheimers
+41942236,Anemia
+01289096,Gout
+39510642,Stroke
+72215640,Allergies
+96150971,Depression
+18238276,Alzheimers
+03022022,Heart Disease
+23386581,Asthma
+62975219,Migraine
+91456696,Allergies
+86289665,Asthma
+33748492,High Cholesterol
+68740942,Cancer
+91184091,Allergies
+83882804,Heart Disease
+42882753,Cancer
+59179145,Depression
+44869321,Epilepsy
+09765234,Heart Disease
+79977123,Epilepsy
+07595644,Cancer
+08572158,Depression
+38296098,Migraine
+85185433,Delirium
+10706448,Arthritis
+96686599,Cataracts
+93101298,Migraine
+57028401,Obesity
+66217336,Asthma
+29852270,Anemia
+27313772,Anemia
+34874080,Cataracts
+93125730,Cataracts
+21080681,Depression
+42217017,Cancer
+28162503,Heart Failure
+58387783,Osteoporosis
+07621285,Gout
+74301108,Dementia
+49759639,Heart Failure
+12758279,Hearing loss
+64171402,Cancer
+68988009,Hypertension
+84968038,Heart Failure
+75259560,Asthma
+23448411,Heart Disease
+52997185,Diabetes
+48008943,Cataracts
+76925045,Asthma
+45932682,Heart Failure
+41052671,High Cholesterol
+44601038,Epilepsy
+56071947,Depression
+91351366,Arthritis
+24618979,Cancer
+16447099,Delirium
+70467971,Asthma
+58061755,High Cholesterol
+68276401,Osteoporosis
+73111133,Stroke
+16467035,Heart Disease
+00077419,Depression
+23889909,Asthma
+70745717,High Cholesterol
+33277593,Arthritis
+17467665,High Cholesterol
+88169022,Migraine
+35884335,Delirium
+44935892,Migraine
+48757994,Arthritis
+79336681,Asthma
+86455501,Cancer
+04671899,Osteoporosis
+83415137,Allergies
+04348782,Osteoporosis
+37128705,Depression
+14894919,Cataracts
+24599727,Cancer
+30288088,Stroke
+78516362,Obesity
+71759387,Heart Disease
+51963652,Alzheimers
+82559356,Gout
+52815687,Gout
+92704632,High Cholesterol
+70190011,High Cholesterol
+32227668,High Cholesterol
+12465077,Allergies
+06689963,Depression
+91276417,Allergies
+00592403,Epilepsy
+04539965,Cataracts
+56555933,Depression
+53015946,Heart Failure
+14162755,Depression
+55286660,Osteoporosis
+76015192,Arthritis
+53954132,Obesity
+42313318,Obesity
+66913866,Delirium
+45078006,Stroke
+15637618,Heart Failure
+20261842,Asthma
+80206513,Asthma
+65604477,Arthritis
+69471795,High Cholesterol
+11421951,Cancer
+34257859,Stroke
+95627481,Cancer
+09799746,Gout
+10503650,High Cholesterol
+40433261,Delirium
+34581166,Delirium
+61546495,Asthma
+95952671,Alzheimers
+72670752,Gout
+98875674,Delirium
+08200984,Asthma
+19195635,Osteoporosis
+61697136,Hearing loss
+03134965,Gout
+44183281,Cataracts
+12216214,Epilepsy
+15685512,Delirium
+37278229,Depression
+80106993,Heart Disease
+23259302,Obesity
+43627943,Dementia
+04452912,Cataracts
+45485626,Arthritis
+42864691,Gout
+06301293,Asthma
+20619567,Migraine
+44160429,Epilepsy
+38804215,Heart Failure
+44550463,Delirium
+08220567,Cancer
+94454928,Gout
+61210021,Delirium
+00905011,Heart Failure
+61223541,Osteoporosis
+73242708,Stroke
+39590241,Arthritis
+71780175,Alzheimers
+65674566,Anemia
+13420394,Asthma
+96656509,Cancer
+34602463,Obesity
+84049173,Anemia
+78094387,Heart Disease
+08642244,Epilepsy
+68669261,Alzheimers
+64605152,Hypertension
+52969422,Alzheimers
+16633132,Stroke
+41285176,Depression
+92051457,Obesity
+64747019,Diabetes
+01851476,Epilepsy
+32695588,Migraine
+57136224,Osteoporosis
+55606891,Delirium
+01582200,Diabetes
+10492309,Allergies
+19909466,Hypertension
+39053840,Cataracts
+91933600,Epilepsy
+24194392,Asthma
+31525561,Hearing loss
+17316976,Delirium
+65974002,Allergies
+45432164,Migraine
+42880777,Asthma
+93841771,Cataracts
+51494283,Osteoporosis
+90664413,Heart Failure
+24488831,Cataracts
+76042882,Arthritis
+71582272,Epilepsy
+67807079,Asthma
+93601143,Heart Failure
+27705287,High Cholesterol
+19160102,Migraine
+45318377,Hearing loss
+06584960,Heart Failure
+08160325,Arthritis
+22851251,Heart Failure
+01894728,Asthma
+04593132,Anemia
+77770215,Arthritis
+70634741,Heart Disease
+56114768,Hypertension
+18445476,Cancer
+71777063,Alzheimers
+24266133,Delirium
+98194853,Alzheimers
+75169587,Diabetes
+76714705,Anemia
+25769878,High Cholesterol
+62078102,Migraine
+09315954,Cancer
+02145085,High Cholesterol
+85242281,Osteoporosis
+44665384,Allergies
+10155252,Allergies
+88837382,Osteoporosis
+12161964,Arthritis
+23341326,Delirium
+38472830,Heart Disease
+32080166,Heart Failure
+36342738,Delirium
+54252336,Stroke
+03616028,Epilepsy
+62246247,Asthma
+76725198,Stroke
+53223436,Dementia
+32800271,Migraine
+90021153,Stroke
+53437785,Heart Disease
+28817495,Depression
+07162687,Obesity
+13664758,Dementia
+27307080,Anemia
+98579892,High Cholesterol
+73713010,Obesity
+04769045,Delirium
+86118229,High Cholesterol
+70827645,Migraine
+10888077,Depression
+29250489,High Cholesterol
+03665937,Hearing loss
+29219364,Heart Failure
+96192390,Cataracts
+69624955,Depression
+38895511,Gout
+01708152,Heart Failure
+51954262,Stroke
+01550438,Anemia
+50188343,Cataracts
+86006510,Migraine
+15224400,Asthma
+04521031,Cancer
+07625083,Stroke
+32338932,Gout
+87645684,Cataracts
+90956176,Cataracts
+43674921,Diabetes
+79841569,Cataracts
+31201262,Epilepsy
+45714163,Cataracts
+27873284,Depression
+42114928,Osteoporosis
+22092428,Diabetes
+91533983,Arthritis
+82294984,Heart Disease
+36218778,Gout
+25779580,Cancer
+75238987,Migraine
+70446885,Diabetes
+96438483,Stroke
+42060035,Allergies
+80938310,High Cholesterol
+93392974,Delirium
+07348872,Depression
+01348079,Stroke
+65316355,Dementia
+75728850,Gout
+26223890,Cataracts
+13647697,Stroke
+78424790,Heart Disease
+62082708,Diabetes
+53427350,Gout
+69610219,Dementia
+21891347,Stroke
+90856306,Gout
+86341570,Obesity
+94001331,Dementia
+99945434,Delirium
+85035438,Obesity
+02701988,Hypertension
+84905051,Alzheimers
+59795546,Heart Failure
+84802209,Gout
+25956209,Depression
+36073207,Epilepsy
+47367247,Allergies
+76779720,Epilepsy
+19140258,Cataracts
+73303086,Asthma
+48018519,Asthma
+21886772,Heart Failure
+63943205,Hypertension
+38815629,Gout
+97986460,Anemia
+46640469,Arthritis
+28229253,Osteoporosis
+09336402,Anemia
+86840092,Stroke
+27765570,Allergies
+95322049,Alzheimers
+99207456,Osteoporosis
+23704855,Osteoporosis
+47129198,Epilepsy
+46987039,Obesity
+47729223,Cataracts
+77084348,Cancer
+07229269,Obesity
+75582126,Alzheimers
+33730226,Depression

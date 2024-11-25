@@ -1,4 +1,10 @@
--- Clear existing data to avoid duplicate entries or foreign key conflicts
+-- Switch to the LongTermCare database
+USE LongTermCare;
+
+-- Disable foreign key checks to avoid issues during cleanup
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Clear existing data to avoid duplicate entries or conflicts
 DELETE FROM FoodAllergyConflict;
 DELETE FROM MedicalSideEffects;
 DELETE FROM Medication;
@@ -9,6 +15,9 @@ DELETE FROM Allergy;
 DELETE FROM Patient;
 DELETE FROM Food;
 
+-- Re-enable foreign key checks
+SET FOREIGN_KEY_CHECKS = 1;
+
 -- Insert required data into the Food table
 INSERT INTO Food (foodName, foodGroup, calories, protein, fats)
 VALUES 
@@ -16,10 +25,11 @@ VALUES
     ('Shrimp', 'Seafood', 99, 24, 1);
 
 -- Insert required data into the Allergy table
+-- Use numeric values for seasonalconsiderations
 INSERT INTO Allergy (allergyName, managementStrategy, seasonalconsiderations)
 VALUES 
-    ('Peanuts', 'Avoid all peanut products. Carry an epinephrine injector.', 'No seasonal considerations'),
-    ('Shellfish', 'Avoid shellfish and carry an epinephrine injector.', 'No seasonal considerations');
+    ('Peanuts', 'Avoid all peanut products. Carry an epinephrine injector.', 0),
+    ('Shellfish', 'Avoid shellfish and carry an epinephrine injector.', 0);
 
 -- Insert test data into Patient
 INSERT INTO Patient (PatientID, firstName, lastName, DateOfBirth, Sex, Height, Weight, AddressID, DNR, InsuranceCheck)
@@ -29,8 +39,8 @@ VALUES
     ('P003', 'Mark', 'Lee', '1985-03-22', 'M', 180, 85, NULL, TRUE, TRUE);
 
 -- Insert test data into Staff
--- Use 'lasttime' instead of 'lastName' to match the original schema
-INSERT INTO Staff (StaffID, firstName, lasttime, Position, Department)
+-- Ensure column names match the schema
+INSERT INTO Staff (StaffID, firstName, lastName, Position, Department)
 VALUES 
     ('S001', 'Alice', 'Brown', 'Nurse', 'General Care'),
     ('S002', 'Bob', 'White', 'Doctor', 'Pediatrics');
@@ -48,11 +58,11 @@ VALUES
     ('M002', 'Anaphylaxis', 'Severe');
 
 -- Insert test data into PatientAllergy
--- AllergyName must match the Allergy table
+-- Ensure Severity matches the allowed values and AllergyName matches the Allergy table
 INSERT INTO PatientAllergy (AllergyName, PatientID, Severity, Description)
 VALUES 
-    ('Peanuts', 'P001', 'Low', 'Mild allergic reaction'),
-    ('Shellfish', 'P002', 'High', 'Severe allergic reaction');
+    ('Peanuts', 'P001', 'Mild', 'Mild allergic reaction'),
+    ('Shellfish', 'P002', 'Severe', 'Severe allergic reaction');
 
 -- Insert test data into FoodAllergyConflict
 INSERT INTO FoodAllergyConflict (FoodName, AllergyName, ConflictCheck)
@@ -63,7 +73,8 @@ VALUES
 -- Insert nurses who are not already assigned to specific patients into the PatientStaffCare table
 INSERT INTO PatientStaffCare (StaffID, PatientID, StaffRoleInCare, CareStartDate)
 SELECT S.StaffID, P.PatientID, 'Support Care', CURDATE()
-FROM Staff S, Patient P
+FROM Staff S
+CROSS JOIN Patient P
 WHERE S.Position = 'Nurse'
   AND NOT EXISTS (
       SELECT 1
@@ -89,6 +100,8 @@ WHERE Severity = 'Low'
       SELECT AllergyName
       FROM FoodAllergyConflict
   );
-select*from ( PatientStaffCare );
-select*from ( Medication M );
-select*from ( PatientAllergy );
+
+-- Verify results of the operations
+SELECT * FROM PatientStaffCare LIMIT 10; -- Verify nurse-patient assignments
+SELECT * FROM Medication WHERE StorageDetails LIKE '%High Priority Storage%'; -- Verify updated medications
+SELECT * FROM PatientAllergy; -- Verify remaining allergies

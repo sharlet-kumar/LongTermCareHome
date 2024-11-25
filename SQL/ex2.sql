@@ -4,7 +4,7 @@ use LongTermCare;
 
 create table Patient 
 (
-PatientID varchar (10) not null, 
+patientID varchar (10) not null, 
 firstName varchar (15),
 lastName varchar (15), 
 DateOfBirth date,
@@ -35,7 +35,7 @@ create table PatientPhone
 (
 patientID varchar(10) not null,
 phone varchar (15),
-primary key (patientID),
+primary key (phone, patientID),
 foreign key PatientPhone(patientID) references Patient(patientID)
 	ON DELETE cascade
     ON UPDATE cascade
@@ -45,27 +45,27 @@ create table Staff
 (
 staffID varchar (10) not null,
 firstName varchar (15),
-lasttime varchar (15),
+lastName varchar (15),
 position varchar (20),
 department varchar (30),
 primary key (staffID)
 );
 
-create table PatientCondition
-(
- patientID varchar (10) not null,
- medicalCondition varchar (30) not null,
- description varchar (150), 
- diagnosisDate date, 
- diagnoserID varchar (10)
- ,primary key (patientID, medicalCondition),
- foreign key PatientCondition(diagnoserID) references Staff(staffID)
-	ON DELETE NO ACTION
-    ON UPDATE CASCADE,
- foreign key PatientCondition(patientID) references Patient(patientID)
-	ON DELETE cascade
-    ON UPDATE cascade
+CREATE TABLE PatientCondition (
+    patientID VARCHAR(10) NOT NULL,
+    medicalCondition VARCHAR(30) NOT NULL,
+    description VARCHAR(150), 
+    diagnosisDate DATE, 
+    diagnoserID VARCHAR(10),
+    PRIMARY KEY (patientID, medicalCondition),
+    FOREIGN KEY (diagnoserID) REFERENCES Staff(staffID)
+        ON DELETE NO ACTION
+        ON UPDATE CASCADE,
+    FOREIGN KEY (patientID) REFERENCES Patient(patientID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
+
 
 create table PatientStaffCare
 (
@@ -87,7 +87,7 @@ create table StaffPhone
 (
 staffID varchar (10) not null,
 phone varchar (15),
-primary key (staffID),
+primary key (phone, staffID),
 foreign key StaffPhone(staffID) references Staff(staffID));
 
 create table Insurance(
@@ -104,7 +104,7 @@ foreign key Insurance(patientID) references Patient(patientID)
 create table BillingAddress(
 BillingAddressID varchar (10) not null, 
 streetNo int,
-streetName varchar (20),
+streetName varchar (40),
 unitNo smallint,
 city varchar (25),
 state varchar (20),
@@ -117,7 +117,7 @@ foreign key BillingAddress(BillingAddressID) references Insurance(BillingAddress
 
 create table InsuranceCoverageDetails (
 PolicyID varchar (10) not null,
-coverageDetails varchar (60), 
+coverageDetails varchar (100), 
 primary key (PolicyID),
 foreign key InsuranceCoverageDetails(PolicyID) references Insurance(PolicyID)
 	ON DELETE cascade
@@ -161,14 +161,14 @@ create table MedicalSideEffects(
 medID varchar(10) not null,
 sideEffects varchar (50),
 Severity varbinary (10),
-primary key (medID),
+primary key (medID, sideEffects),
 foreign key MedicalSideEffects(medID) references Medication(medID)
 	ON DELETE CASCADE
     ON update cascade
 );
 
 create table Allergy(
-allergyName varchar (20) not null unique,
+allergyName varchar (20) not null,
 managementStrategy varchar (100),
 seasonalconsiderations boolean,
 primary key (allergyName)
@@ -176,9 +176,9 @@ primary key (allergyName)
 
 
 create table PatientAllergy(
-allergyName varchar (20) not null unique,
+allergyName varchar (20) not null,
 patientID varchar (10) not null,
-severity varchar (6) Check(severity in ('Low', 'Medium', 'High')),
+severity varchar (10) Check(severity in ("Mild", "Moderate", "Severe")),
 description varchar (300),
 primary key (allergyName, patientID),
 foreign key PatientAllergy(patientID) references Patient(patientID)
@@ -190,8 +190,8 @@ foreign key PatientAllergy(allergyName) references Allergy(allergyName)
 create table AllergySymptoms(
 allergyName varchar (20) not null,
 symptoms varchar (160),
-severity varchar (6) Check(severity in ('Low', 'Medium', 'High')),
-primary key (allergyName),
+severity varchar (10) Check(severity in ("low", "Moderate", "Severe")),
+primary key (allergyName, symptoms),
 foreign key AllergySymptoms(allergyName) references Allergy(allergyName)
 	ON DELETE cascade
     ON UPDATE cascade);
@@ -229,7 +229,7 @@ foreign key PIDVisit(patientID) references Patient(patientID)
 create table VisitorPhone(
 visitorID varchar (10) not null, 
 phone varchar (15),
-primary key (visitorID),
+primary key (phone, visitorID),
 foreign key VisitorPhone(visitorID) references Visitor(visitorID)
 	ON delete cascade
     on update cascade

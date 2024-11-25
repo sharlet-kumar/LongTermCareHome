@@ -1,3 +1,4 @@
+-- Active: 1732140614617@@localhost@3306@longtermcare
 drop database longtermcare;
 create database longtermcare;
 use LongTermCare;
