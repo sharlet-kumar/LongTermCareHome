@@ -160,7 +160,7 @@ foreign key MedsTreatCondition(medID) references Medication(medID)
 create table MedicalSideEffects(
 medID varchar(10) not null,
 sideEffects varchar (50),
-Severity varbinary (10),
+Severity varchar (10) Check(severity in ("Mild", "Moderate", "Severe")),
 primary key (medID, sideEffects),
 foreign key MedicalSideEffects(medID) references Medication(medID)
 	ON DELETE CASCADE

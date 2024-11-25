@@ -246,6 +246,88 @@ BEGIN
     EXECUTE stmt;
     DEALLOCATE PREPARE stmt;
     
+-- query 1, multi relation
+SELECT 
+    Patient.firstName,
+    Patient.lastName,
+    PatientAddress.StreetNo,
+    PatientAddress.StreetName,
+    PatientAddress.City,
+    PatientAddress.State
+FROM
+    Patient
+JOIN
+    PatientAddress
+ON
+    Patient.AddressID = PatientAddress.AddressID;
+
+-- Query 2, using subquery to calculate average height
+SELECT
+    firstName,
+    lastName,
+    Height
+FROM
+    Patient
+WHERE
+    Height > (SELECT AVG(Height) FROM Patient);
+
+-- Query 3, using DOB to find age under 70
+SELECT
+    firstName,
+    lastName,
+    TIMESTAMPDIFF(YEAR, DateOfBirth, CURDATE()) AS Age
+FROM
+    Patient
+WHERE
+    TIMESTAMPDIFF(YEAR, DateOfBirth, CURDATE()) < 70;
+
+-- Query 4, using exists, checking if a specific patient has insurance
+SELECT
+    CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM Patient
+            WHERE PatientID = '5037335674' AND InsuranceCheck = 1
+        ) THEN 'Yes'
+        ELSE 'No'
+    END AS HasInsurance;
+
+-- Query 5, prints all patients that have insurance
+SELECT
+    PatientID,
+    firstName,
+    lastName,
+    CASE
+        WHEN InsuranceCheck = 1 THEN 'Yes'
+        ELSE 'No'
+    END AS HasInsurance
+FROM Patient;
+
+-- Query 6, using group and join
+SELECT 
+    Patient.PatientID, 
+    Patient.firstName, 
+    Patient.lastName, 
+    COUNT(PatientMedication.medID) AS NumberOfMedications 
+FROM 
+    Patient 
+JOIN 
+    PatientMedication ON Patient.PatientID = PatientMedication.PatientID 
+GROUP BY 
+    Patient.PatientID 
+ORDER BY 
+    NumberOfMedications DESC; 
+
+-- Query 7, using group 
+SELECT
+    medicalCondition,
+    COUNT(DISTINCT patientID) AS NumberOfPatients
+FROM
+    PatientCondition
+GROUP BY
+    medicalCondition;
+
+
 END$$
 
 DELIMITER ;

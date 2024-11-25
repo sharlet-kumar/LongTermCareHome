@@ -6,11 +6,11 @@ import os
 db_config = {
     "host": "localhost",
     "user": "root",
-    "password": "",  ###put in your pasword 
+    "password": "EandS2024!",  ###put in your pasword 
     "database": "longtermcare"
 }
 
-csv_directory = "" ###path to folder where all csv files are held on device 
+csv_directory = "C:\\Users\\sharl\\OneDrive\\Desktop\\3309\\assignment-3-group5" ###path to folder where all csv files are held on device 
 
 # Mapping CSV files to tables
 csv_to_table_mapping = {
