@@ -1,9 +1,7 @@
-# AISE3309_Assignment3_2024
+# Long-Term Care Home Database Software
 
-This repo will contain the data source for your project and the sql files for each questions.
+Database software to log and manage long-term care home data, including general patient information, health conditions, medications and allergies, potential interactions between medications, and staff data.
 
-The SRC folder should have the data files you used as well as any script you used to load the data within the database and any code used to generate the data. If you used excel spreadsheets, include these as well.
+![MySQL Badge](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff&style=flat-square) ![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square) ![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat-square)
 
-The SQL Folder should include all the required SQL files for each of the questions.
-
-The DUMP folder should contain an exported copy of your database.
+Features MySQL back-end database, HTML front-end interface, and a Python script to generate data for software testing.
